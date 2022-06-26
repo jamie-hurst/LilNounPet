@@ -8,11 +8,72 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var vm = ViewModel()
+    private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form {
+                ImageView()
+                
+                if vm.pet.isAlive {
+                    StatsView()
+                } else {
+                    DeathView()
+                }
+            }
+            .environmentObject(vm)
+            .navigationTitle(vm.pet.name)
+            .sheet(isPresented: $vm.isShowingHatchView) {
+                HatchView(isShowingHatchView: $vm.isShowingHatchView)
+                    .environmentObject(vm)
+                    .interactiveDismissDisabled(true)
+            }
+            .sheet(isPresented: $vm.isShowingEditView) {
+                EditView(chosenBackground: $vm.chosenBackground, chosenTheme: $vm.chosenTheme)
+                    .environmentObject(vm)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button { vm.isShowingEditView = true } label: {
+                        Label("profile", systemImage: "face.smiling")
+                            .foregroundColor(vm.darkThemes[vm.chosenTheme])
+                            .font(.title2)
+                    }
+                }
+                ToolbarItem(placement: .bottomBar) {
+                    Button {
+                        vm.feed()
+                        vm.hapticSuccess()
+                    } label: {
+                        Label("Feed", systemImage: "fork.knife.circle")
+                            .foregroundColor(vm.pet.isAlive ? vm.darkThemes[vm.chosenTheme] : .secondary)
+                            .font(.title2)
+                    }
+                    .disabled(!vm.pet.isAlive)
+                }
+                ToolbarItem(placement: .bottomBar) {
+                    Button {
+                        vm.giveWater()
+                        vm.hapticSuccess()
+                    } label: {
+                        Label("Give water", systemImage: "drop")
+                            .foregroundColor(vm.pet.isAlive ? vm.darkThemes[vm.chosenTheme] : .secondary)
+                            .font(.title2)
+                    }
+                    .disabled(!vm.pet.isAlive)
+                }
+            }
+            .onReceive(timer) { _ in
+                vm.saveData()
+            }
+        }
+        .preferredColorScheme(.dark)
     }
+    
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
