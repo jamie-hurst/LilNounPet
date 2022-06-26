@@ -32,7 +32,6 @@ enum NeedType {
     @AppStorage("chosenTheme") var chosenTheme = 0
     let darkThemes: [Color] = [.dracPink, .dracGreen, .dracPurple, .dracWhite, .dracCyan, .dracOrange, .dracRed, .dracYellow]
     
-//    let lightThemes: [Color] = [.pink, .green, .purple, .black, .cyan, .orange, .red, .yellow]
     
     
     
@@ -137,11 +136,6 @@ enum NeedType {
             }
         }
     }
-    
-    
-//    func cancelNotifications() {
-//
-//    }
     
     
     func disableNotifications() {
