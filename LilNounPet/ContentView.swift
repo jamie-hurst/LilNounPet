@@ -71,7 +71,6 @@ struct ContentView: View {
                 vm.saveData()
             }
         }
-//        .preferredColorScheme(.dark)
     }
     
 }
