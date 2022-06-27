@@ -27,11 +27,11 @@ enum NeedType {
     
     //saves the background user selects with UserDefaults
     @AppStorage("chosenBackground") var chosenBackground = 0
-    let backgroundsArray = ["black", "cool", "warm", "pink", "green"]
+    let backgroundsArray = ["pink", "green", "cool", "warm", "black"]
     
     @AppStorage("chosenTheme") var chosenTheme = 0
-    let darkThemes: [Color] = [.dracPink, .dracGreen, .dracPurple, .dracWhite, .dracCyan, .dracOrange, .dracRed, .dracYellow]
-    let lightThemes: [Color] = [.pink, .green, .purple, .primary, .cyan, .orange, .red, .yellow]
+    let darkThemes: [Color] = [.primary, .dracPink, .dracGreen, .dracPurple, .dracCyan, .dracOrange, .dracRed, .dracYellow]
+    let lightThemes: [Color] = [.primary, .pink, .green, .purple, .cyan, .orange, .red, .yellow]
     
     
     
