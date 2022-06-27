@@ -30,8 +30,8 @@ enum NeedType {
     let backgroundsArray = ["pink", "green", "cool", "warm", "black"]
     
     @AppStorage("chosenTheme") var chosenTheme = 0
-    let darkThemes: [Color] = [.primary, .dracPink, .dracGreen, .dracPurple, .dracCyan, .dracOrange, .dracRed, .dracYellow]
-    let lightThemes: [Color] = [.primary, .pink, .green, .purple, .cyan, .orange, .red, .yellow]
+    let darkThemes: [Color] = [.dracPink, .dracGreen, .dracPurple, .dracCyan, .dracOrange, .dracRed, .dracYellow, .primary]
+    let lightThemes: [Color] = [.pink, .green, .purple, .cyan, .orange, .red, .yellow, .primary]
     
     
     
