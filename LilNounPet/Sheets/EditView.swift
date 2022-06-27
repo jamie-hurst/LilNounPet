@@ -43,7 +43,7 @@ struct EditView: View {
                     Picker("Theme", selection: $vm.chosenTheme) {
                         ForEach(0..<vm.darkThemes.count, id: \.self) {
                             Image(systemName: "square.fill")
-                                .foregroundColor(vm.darkThemes[$0])
+                                .foregroundColor(colorScheme == .dark ? vm.darkThemes[$0] : vm.lightThemes[$0])
                                 .font(.title2)
                         }
                     }

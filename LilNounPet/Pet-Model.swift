@@ -76,15 +76,15 @@ struct Pet: Codable {
         
     }
     
-//    var eyeExpression: String {
-//        if !isAlive {
-//            return "dead"
-//        } else if !isAwake {
-//            return "closed"
-//        } else {
-//            return self.glasses
-//        }
-//    }
+    var eyeExpression: String {
+        if !isAlive {
+            return "dead"
+        } else if !isAwake {
+            return "sleep"
+        } else {
+            return self.glasses
+        }
+    }
     
 //    var mouthExpression: String {
 //

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     @StateObject private var vm = ViewModel()
+    
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
     
@@ -38,7 +40,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button { vm.isShowingEditView = true } label: {
                         Label("profile", systemImage: "face.smiling")
-                            .foregroundColor(vm.darkThemes[vm.chosenTheme])
+                            .foregroundColor(vm.pet.isAlive ? (colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme]) : nil)
                             .font(.title2)
                     }
                 }
@@ -48,7 +50,7 @@ struct ContentView: View {
                         vm.hapticSuccess()
                     } label: {
                         Label("Feed", systemImage: "fork.knife.circle")
-                            .foregroundColor(vm.pet.isAlive ? vm.darkThemes[vm.chosenTheme] : .secondary)
+                            .foregroundColor(vm.pet.isAlive ? (colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme]) : nil)
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
@@ -59,7 +61,7 @@ struct ContentView: View {
                         vm.hapticSuccess()
                     } label: {
                         Label("Give water", systemImage: "drop")
-                            .foregroundColor(vm.pet.isAlive ? vm.darkThemes[vm.chosenTheme] : .secondary)
+                            .foregroundColor(vm.pet.isAlive ? (colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme]) : nil)
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
@@ -69,7 +71,7 @@ struct ContentView: View {
                 vm.saveData()
             }
         }
-        .preferredColorScheme(.dark)
+//        .preferredColorScheme(.dark)
     }
     
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StatsView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var vm : ViewModel
     
     var body: some View {
@@ -24,7 +25,7 @@ struct StatsView: View {
                 Spacer()
                 
                 Text(vm.pet.thirst)
-                    .foregroundColor(vm.darkThemes[vm.chosenTheme])
+                    .foregroundColor(colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme])
             }
             
             HStack {
@@ -32,7 +33,7 @@ struct StatsView: View {
                 Spacer()
                 
                 Text(vm.pet.hunger)
-                    .foregroundColor(vm.darkThemes[vm.chosenTheme])
+                    .foregroundColor(colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme])
             }
         }
         

@@ -35,6 +35,11 @@ struct ImageView: View {
                         .interpolation(.none)
                         .resizable()
                         .scaledToFit()
+                    Image(vm.pet.eyeExpression)
+                        .interpolation(.none)
+                        .resizable()
+                        .scaledToFit()
+                    
                 }
             }
             .frame(width: 280, height: 280)
