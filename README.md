@@ -1,7 +1,6 @@
 # LilNounPet
 
-### tl;dr:
-A virtual pet to take care of and enjoy on your iPhone. 
+### tl;dr: A virtual pet to take care of and enjoy on your iPhone. 
 
 Prevent your Lil Noun’s slow march toward doom by providing it with food and water. Think Tamagotchi, but with Lil Nouns cc0 artwork! Each Lil Noun is randomly generated based on a large set of traits when the pet is hatched. Your pet’s appearance reflects its current state. If your pet is asleep, its eyes will be closed. If your pet dies, its eyes will be crossed out, etc.
 The key feature I’d like to implement next is a HomeScreen Widget. The ultimate goal of this app is being able to see your pet Lil Noun right next to your favorite iOS apps on the HomeScreen. 
