@@ -24,3 +24,11 @@ The key feature I’d like to implement next is a HomeScreen Widget. The ultimat
 
 
 
+<img width="328" alt="lilNounPetLight" src="https://user-images.githubusercontent.com/28959624/176094943-4f91cdac-aba4-4a51-930f-3fdf145f4fe7.png">
+
+<img width="323" alt="lilNounPetDark" src="https://user-images.githubusercontent.com/28959624/176094959-1751ccb0-8e69-4579-95ae-cadf085e1cbd.png">
+
+https://user-images.githubusercontent.com/28959624/176094855-cb2805a5-97cd-4a64-bdbb-025a8739508e.mov
+
+
+
