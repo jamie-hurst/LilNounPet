@@ -15,7 +15,7 @@ struct Pet: Codable {
     
     var lastMeal: Date
     var lastDrink: Date
-
+    
     var body: String
     var accessory: String
     var head: String
@@ -57,7 +57,7 @@ struct Pet: Codable {
             return true
         }
     }
-
+    
     var isAwake: Bool {
         let calendar = Calendar.current
         let now = Date()
@@ -65,7 +65,7 @@ struct Pet: Codable {
         let startOfToday = calendar.startOfDay(for: now)
         let bedTime = calendar.date(byAdding: .hour, value: 22, to: startOfToday)!
         let wakeTime = calendar.date(byAdding: .hour, value: 7, to: startOfToday)!
-
+        
         let awakeTime =  wakeTime...bedTime
         
         if awakeTime.contains(now) {
@@ -87,37 +87,41 @@ struct Pet: Codable {
     }
     
     var hungerExpression: String {
-                if hunger == "♥︎♡♡♡♡♡" || hunger == "♥︎♥︎♡♡♡♡" || hunger == "♥︎♥︎♥︎♡♡♡" {
-                    return "hungry"
-                }
-        return ""
+        if isAlive {
+            if hunger == "♥︎♡♡♡♡♡" || hunger == "♥︎♥︎♡♡♡♡" || hunger == "♥︎♥︎♥︎♡♡♡" {
+                return "hungry"
+            }
+            return ""
+        }
+        
+       return ""
     }
     
-//    var mouthExpression: String {
-//
-//        if hunger == "♥︎♡♡♡♡♡" || thirst == "♥︎♡♡♡♡♡" {
-//            return "sad"
-//        }
-//
-//        if hunger == "♥︎♥︎♡♡♡♡" || thirst == "♥︎♥︎♡♡♡♡" {
-//            return "zzz"
-//        }
-//
-//        if hunger == "♥︎♥︎♥︎♥︎♡♡" || thirst == "♥︎♥︎♥︎♥︎♡♡" ||
-//            hunger == "♥︎♥︎♥︎♡♡♡" || thirst == "♥︎♥︎♥︎♡♡♡" {
-//            return "basic"
-//        }
-//
-//        if hunger == "♥︎♥︎♥︎♥︎♥︎♡" || thirst == "♥︎♥︎♥︎♥︎♥︎♡" {
-//            return "tongue-out"
-//        }
-//
-//        if hunger == "♥︎♥︎♥︎♥︎♥︎♥︎" || thirst == "♥︎♥︎♥︎♥︎♥︎♥︎" {
-//            return "happy"
-//        }
-//
-//        return ""
-//    }
+    //    var mouthExpression: String {
+    //
+    //        if hunger == "♥︎♡♡♡♡♡" || thirst == "♥︎♡♡♡♡♡" {
+    //            return "sad"
+    //        }
+    //
+    //        if hunger == "♥︎♥︎♡♡♡♡" || thirst == "♥︎♥︎♡♡♡♡" {
+    //            return "zzz"
+    //        }
+    //
+    //        if hunger == "♥︎♥︎♥︎♥︎♡♡" || thirst == "♥︎♥︎♥︎♥︎♡♡" ||
+    //            hunger == "♥︎♥︎♥︎♡♡♡" || thirst == "♥︎♥︎♥︎♡♡♡" {
+    //            return "basic"
+    //        }
+    //
+    //        if hunger == "♥︎♥︎♥︎♥︎♥︎♡" || thirst == "♥︎♥︎♥︎♥︎♥︎♡" {
+    //            return "tongue-out"
+    //        }
+    //
+    //        if hunger == "♥︎♥︎♥︎♥︎♥︎♥︎" || thirst == "♥︎♥︎♥︎♥︎♥︎♥︎" {
+    //            return "happy"
+    //        }
+    //
+    //        return ""
+    //    }
     
     var hunger: String {
         let timeSince = calcTimeSince(date: lastMeal)
