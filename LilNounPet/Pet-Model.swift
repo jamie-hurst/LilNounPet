@@ -86,6 +86,13 @@ struct Pet: Codable {
         }
     }
     
+    var hungerExpression: String {
+                if hunger == "♥︎♡♡♡♡♡" || hunger == "♥︎♥︎♡♡♡♡" || hunger == "♥︎♥︎♥︎♡♡♡" {
+                    return "hungry"
+                }
+        return ""
+    }
+    
 //    var mouthExpression: String {
 //
 //        if hunger == "♥︎♡♡♡♡♡" || thirst == "♥︎♡♡♡♡♡" {
