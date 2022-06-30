@@ -75,6 +75,40 @@ struct Pet: Codable {
         }
         
     }
+
+    var hunger: Int {
+        let timeSince = calcTimeSince(date: lastMeal)
+        var int = 0
+        
+        switch timeSince {
+        case 0..<14400: int = 6
+        case 14400..<28800: int = 5
+        case 28800..<43200: int = 4
+        case 43200..<57600: int = 3
+        case 57600..<72000: int = 2
+        case 72000...: int = 1
+        default: int = 0
+        }
+        
+        return int
+    }
+    
+    var thirst: Int {
+        let timeSince = calcTimeSince(date: lastDrink)
+        var int = 0
+        
+        switch timeSince {
+        case 0..<7200: int = 6
+        case 7200..<14400: int = 5
+        case 14400..<21600: int = 4
+        case 21600..<28800: int = 3
+        case 28800..<36000: int = 2
+        case 36000...: int = 1
+        default: int = 0
+        }
+        
+        return int
+    }
     
     var eyeExpression: String {
         if !isAlive {
@@ -88,73 +122,24 @@ struct Pet: Codable {
     
     var hungerExpression: String {
         if isAlive {
-            if hunger == "♥︎♡♡♡♡♡" || hunger == "♥︎♥︎♡♡♡♡" || hunger == "♥︎♥︎♥︎♡♡♡" {
+            if hunger < 4 {
                 return "hungry"
             }
             return ""
         }
-        
        return ""
     }
     
-    //    var mouthExpression: String {
-    //
-    //        if hunger == "♥︎♡♡♡♡♡" || thirst == "♥︎♡♡♡♡♡" {
-    //            return "sad"
-    //        }
-    //
-    //        if hunger == "♥︎♥︎♡♡♡♡" || thirst == "♥︎♥︎♡♡♡♡" {
-    //            return "zzz"
-    //        }
-    //
-    //        if hunger == "♥︎♥︎♥︎♥︎♡♡" || thirst == "♥︎♥︎♥︎♥︎♡♡" ||
-    //            hunger == "♥︎♥︎♥︎♡♡♡" || thirst == "♥︎♥︎♥︎♡♡♡" {
-    //            return "basic"
-    //        }
-    //
-    //        if hunger == "♥︎♥︎♥︎♥︎♥︎♡" || thirst == "♥︎♥︎♥︎♥︎♥︎♡" {
-    //            return "tongue-out"
-    //        }
-    //
-    //        if hunger == "♥︎♥︎♥︎♥︎♥︎♥︎" || thirst == "♥︎♥︎♥︎♥︎♥︎♥︎" {
-    //            return "happy"
-    //        }
-    //
-    //        return ""
-    //    }
-    
-    var hunger: String {
-        let timeSince = calcTimeSince(date: lastMeal)
-        var string = ""
-        
-        switch timeSince {
-        case 0..<14400: string = "♥︎♥︎♥︎♥︎♥︎♥︎"
-        case 14400..<28800: string = "♥︎♥︎♥︎♥︎♥︎♡"
-        case 28800..<43200: string = "♥︎♥︎♥︎♥︎♡♡"
-        case 43200..<57600: string = "♥︎♥︎♥︎♡♡♡"
-        case 57600..<72000: string = "♥︎♥︎♡♡♡♡"
-        case 72000...: string = "♥︎♡♡♡♡♡"
-        default: string = ""
+    var thirstExpression: String {
+        if isAlive {
+            if thirst < 4 {
+                return "thirsty"
+            }
+            return ""
         }
-        
-        return string
+       return ""
     }
     
-    var thirst: String {
-        let timeSince = calcTimeSince(date: lastDrink)
-        var string = ""
-        
-        switch timeSince {
-        case 0..<7200: string = "♥︎♥︎♥︎♥︎♥︎♥︎"
-        case 7200..<14400: string = "♥︎♥︎♥︎♥︎♥︎♡"
-        case 14400..<21600: string = "♥︎♥︎♥︎♥︎♡♡"
-        case 21600..<28800: string = "♥︎♥︎♥︎♡♡♡"
-        case 28800..<36000: string = "♥︎♥︎♡♡♡♡"
-        case 36000...: string = "♥︎♡♡♡♡♡"
-        default: string = ""
-        }
-        
-        return string
-    }
+    
 }
 

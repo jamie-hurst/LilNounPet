@@ -24,7 +24,7 @@ struct StatsView: View {
                 Text("Thirst")
                 Spacer()
                 
-                Text(vm.pet.thirst)
+                Text(healthLevels[vm.pet.thirst]!)
                     .foregroundColor(colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme])
             }
             
@@ -32,16 +32,16 @@ struct StatsView: View {
                 Text("Hunger")
                 Spacer()
                 
-                Text(vm.pet.hunger)
+                Text(healthLevels[vm.pet.hunger]!)
                     .foregroundColor(colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme])
             }
         }
         
-//        Section {
-//            Text("birthday: \(vm.pet.birthday.formatted())")
-//            Text("last meal: \(vm.pet.lastMeal.formatted())")
-//            Text("last drink: \(vm.pet.lastDrink.formatted())")
-//        }
+        Section {
+            Text("birthday: \(vm.pet.birthday.formatted())")
+            Text("last meal: \(vm.pet.lastMeal.formatted())")
+            Text("last drink: \(vm.pet.lastDrink.formatted())")
+        }
         
     }
 }

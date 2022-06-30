@@ -13,6 +13,15 @@ enum NeedType {
     case thirst, hunger
 }
 
+let healthLevels = [
+    1: "♥︎♡♡♡♡♡",
+    2: "♥︎♥︎♡♡♡♡",
+    3: "♥︎♥︎♥︎♡♡♡",
+    4: "♥︎♥︎♥︎♥︎♡♡",
+    5: "♥︎♥︎♥︎♥︎♥︎♡",
+    6: "♥︎♥︎♥︎♥︎♥︎♥︎",
+]
+
 @MainActor class ViewModel: ObservableObject {
     @Published var pet: Pet
     private var repository = PetRepository()

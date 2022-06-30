@@ -39,10 +39,19 @@ struct ImageView: View {
                         .interpolation(.none)
                         .resizable()
                         .scaledToFit()
-                    Image(vm.pet.hungerExpression)
-                        .interpolation(.none)
-                        .resizable()
-                        .scaledToFit()
+                    if !vm.pet.hungerExpression.isEmpty {
+                        Image(vm.pet.hungerExpression)
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    if !vm.pet.thirstExpression.isEmpty {
+                        Image(vm.pet.thirstExpression)
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    
                 }
             }
             .frame(width: 280, height: 280)
