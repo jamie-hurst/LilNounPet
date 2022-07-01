@@ -37,11 +37,11 @@ struct StatsView: View {
             }
         }
         
-        Section {
-            Text("birthday: \(vm.pet.birthday.formatted())")
-            Text("last meal: \(vm.pet.lastMeal.formatted())")
-            Text("last drink: \(vm.pet.lastDrink.formatted())")
-        }
+//        Section {
+//            Text("birthday: \(vm.pet.birthday.formatted())")
+//            Text("last meal: \(vm.pet.lastMeal.formatted())")
+//            Text("last drink: \(vm.pet.lastDrink.formatted())")
+//        }
         
     }
 }

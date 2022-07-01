@@ -121,7 +121,7 @@ struct Pet: Codable {
     }
     
     var hungerExpression: String {
-        if isAlive {
+        if isAlive && isAwake {
             if hunger < 4 {
                 return "hungry"
             }
@@ -131,7 +131,7 @@ struct Pet: Codable {
     }
     
     var thirstExpression: String {
-        if isAlive {
+        if isAlive && isAwake {
             if thirst < 4 {
                 return "thirsty"
             }
