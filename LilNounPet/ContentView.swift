@@ -40,7 +40,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button { vm.isShowingEditView = true } label: {
                         Label("profile", systemImage: "face.smiling")
-                            .foregroundColor(vm.pet.isAlive ? (colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme]) : nil)
+                            .foregroundColor(colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme])
                             .font(.title2)
                     }
                 }
