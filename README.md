@@ -23,9 +23,19 @@ The key feature I’d like to implement next is a HomeScreen Widget. The ultimat
 * UI/UX improvements
 
 
-<img width="323" alt="lilNounPetDark" src="https://user-images.githubusercontent.com/28959624/176094959-1751ccb0-8e69-4579-95ae-cadf085e1cbd.png">
+![steveHungryLight](https://user-images.githubusercontent.com/28959624/176830047-de0f6d51-fd81-4f41-9b10-b8f95f5337a2.png)
+
+![steve2](https://user-images.githubusercontent.com/28959624/176792351-937dd548-4ab2-46b9-ae9a-68306c945950.png)
+
+![steveasleep](https://user-images.githubusercontent.com/28959624/176830096-db03433a-5f95-4dbe-b71a-6c6d62bdca3a.png)
+
+
+
+
+https://user-images.githubusercontent.com/28959624/176792371-5a2d7524-77c0-444c-b7fd-f96e1923b430.mov
 
 https://user-images.githubusercontent.com/28959624/176094855-cb2805a5-97cd-4a64-bdbb-025a8739508e.mov
+
 
 
 
