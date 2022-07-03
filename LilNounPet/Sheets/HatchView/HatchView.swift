@@ -17,8 +17,17 @@ struct HatchView: View {
         NavigationView {
             Form {
                 
+                HStack {
+                    Spacer()
+                    Text("Lil Noun Pet")
+                        .font(Font.custom("LondrinaSolid-Regular", size: 48, relativeTo: .title))
+                    Spacer()
+                }
+                .listRowBackground(Color(UIColor.systemGroupedBackground))
+                
+                
                 Section("Name") {
-                    TextField("What's your pet's name?", text:$vm.pet.name)
+                    TextField("Name your Lil Noun", text:$vm.pet.name)
                         .keyboardType(.alphabet)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)

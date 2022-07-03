@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+   
+    
+    
     @Environment(\.colorScheme) var colorScheme
     @StateObject private var vm = ViewModel()
     
@@ -71,6 +75,14 @@ struct ContentView: View {
                 vm.saveData()
             }
         }
+    }
+    
+    
+    //Custom font for NavigationTitle
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "LondrinaSolid-Regular", size: 48)!]
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "LondrinaSolid-Regular", size: 20)!]
     }
     
 }

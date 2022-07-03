@@ -22,6 +22,7 @@
 		7D85C8BF28682E2600E625A4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8BE28682E2600E625A4 /* EditView.swift */; };
 		7D85C8C128682E9500E625A4 /* HatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8C028682E9500E625A4 /* HatchView.swift */; };
 		7DA53BF3287233AD005A821C /* HowToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA53BF2287233AD005A821C /* HowToView.swift */; };
+		7DA53BF528724318005A821C /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DA53BF428724318005A821C /* LondrinaSolid-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		7D85C8BE28682E2600E625A4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		7D85C8C028682E9500E625A4 /* HatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchView.swift; sourceTree = "<group>"; };
 		7DA53BF2287233AD005A821C /* HowToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToView.swift; sourceTree = "<group>"; };
+		7DA53BF428724318005A821C /* LondrinaSolid-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Regular.ttf"; sourceTree = "<group>"; };
+		7DA53BF6287243DD005A821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 		7D85C89C2867D53400E625A4 /* LilNounPet */ = {
 			isa = PBXGroup;
 			children = (
+				7DA53BF6287243DD005A821C /* Info.plist */,
 				7D85C89D2867D53400E625A4 /* LilNounPetApp.swift */,
 				7D85C89F2867D53400E625A4 /* ContentView.swift */,
 				7D85C8BD28682E1700E625A4 /* Sheets */,
@@ -82,7 +86,7 @@
 				7D85C8AF2867DBA900E625A4 /* Pet-Model.swift */,
 				7D85C8B12867DBDE00E625A4 /* Helpers.swift */,
 				7D85C8A12867D53600E625A4 /* Assets.xcassets */,
-				7D85C8B52867DEF000E625A4 /* Art Assets */,
+				7D85C8B52867DEF000E625A4 /* Assets */,
 				7D85C8A32867D53600E625A4 /* Preview Content */,
 			);
 			path = LilNounPet;
@@ -96,12 +100,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7D85C8B52867DEF000E625A4 /* Art Assets */ = {
+		7D85C8B52867DEF000E625A4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7DA53BF428724318005A821C /* LondrinaSolid-Regular.ttf */,
 				7D85C8AB2867D83C00E625A4 /* ArtAssets.swift */,
 			);
-			path = "Art Assets";
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		7D85C8B62867E0BD00E625A4 /* Components */ = {
@@ -117,11 +122,27 @@
 		7D85C8BD28682E1700E625A4 /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
-				7D85C8BE28682E2600E625A4 /* EditView.swift */,
-				7DA53BF2287233AD005A821C /* HowToView.swift */,
-				7D85C8C028682E9500E625A4 /* HatchView.swift */,
+				7DA53BF82872471C005A821C /* EditView */,
+				7DA53BF7287246CB005A821C /* HatchView */,
 			);
 			path = Sheets;
+			sourceTree = "<group>";
+		};
+		7DA53BF7287246CB005A821C /* HatchView */ = {
+			isa = PBXGroup;
+			children = (
+				7D85C8C028682E9500E625A4 /* HatchView.swift */,
+			);
+			path = HatchView;
+			sourceTree = "<group>";
+		};
+		7DA53BF82872471C005A821C /* EditView */ = {
+			isa = PBXGroup;
+			children = (
+				7D85C8BE28682E2600E625A4 /* EditView.swift */,
+				7DA53BF2287233AD005A821C /* HowToView.swift */,
+			);
+			path = EditView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D85C8A52867D53600E625A4 /* Preview Assets.xcassets in Resources */,
+				7DA53BF528724318005A821C /* LondrinaSolid-Regular.ttf in Resources */,
 				7D85C8A22867D53600E625A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +360,7 @@
 				DEVELOPMENT_TEAM = 435PDV6Y55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LilNounPet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -367,6 +390,7 @@
 				DEVELOPMENT_TEAM = 435PDV6Y55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LilNounPet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
