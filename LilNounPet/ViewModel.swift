@@ -123,6 +123,13 @@ let healthLevels = [
         isShowingHatchView.toggle()
     }
     
+    var isHatchViewValid: Bool {
+        if pet.name.isReallyEmpty {
+            return false
+        }
+        return true
+    }
+    
     
     //haptic feedback
     func hapticSuccess() {

@@ -60,3 +60,9 @@ extension ShapeStyle where Self == Color {
     }
 
 }
+
+extension String {
+    var isReallyEmpty: Bool {
+        self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+}

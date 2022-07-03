@@ -37,8 +37,10 @@ struct HatchView: View {
                     Button("Hatch your pet") {
                         vm.hatchPet()
                     }
+                    .disabled(!vm.isHatchViewValid)
                 }
             }
+            
             
         }
         
