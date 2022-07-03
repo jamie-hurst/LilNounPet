@@ -187,7 +187,7 @@ let healthLevels = [
             if needType == .hunger {
             content.title = "Your Pet is Hungry"
             content.subtitle = "Give it food or it will die."
-            hoursUntilWarning = 20
+            hoursUntilWarning = 22
             }
             
             let nextTriggerDate = Calendar.current.date(byAdding: .hour, value: hoursUntilWarning, to: Date()) ?? Date.now

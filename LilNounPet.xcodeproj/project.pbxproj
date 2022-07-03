@@ -21,6 +21,7 @@
 		7D85C8BC28682DEC00E625A4 /* DeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8BB28682DEC00E625A4 /* DeathView.swift */; };
 		7D85C8BF28682E2600E625A4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8BE28682E2600E625A4 /* EditView.swift */; };
 		7D85C8C128682E9500E625A4 /* HatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8C028682E9500E625A4 /* HatchView.swift */; };
+		7DA53BF3287233AD005A821C /* HowToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA53BF2287233AD005A821C /* HowToView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		7D85C8BB28682DEC00E625A4 /* DeathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathView.swift; sourceTree = "<group>"; };
 		7D85C8BE28682E2600E625A4 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		7D85C8C028682E9500E625A4 /* HatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchView.swift; sourceTree = "<group>"; };
+		7DA53BF2287233AD005A821C /* HowToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				7D85C8BE28682E2600E625A4 /* EditView.swift */,
+				7DA53BF2287233AD005A821C /* HowToView.swift */,
 				7D85C8C028682E9500E625A4 /* HatchView.swift */,
 			);
 			path = Sheets;
@@ -201,6 +204,7 @@
 				7D85C8BC28682DEC00E625A4 /* DeathView.swift in Sources */,
 				7D85C89E2867D53400E625A4 /* LilNounPetApp.swift in Sources */,
 				7D85C8AC2867D83C00E625A4 /* ArtAssets.swift in Sources */,
+				7DA53BF3287233AD005A821C /* HowToView.swift in Sources */,
 				7D85C8B42867DDFC00E625A4 /* ViewModel.swift in Sources */,
 				7D85C8BA28682DB100E625A4 /* StatsView.swift in Sources */,
 			);

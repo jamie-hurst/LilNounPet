@@ -51,6 +51,12 @@ struct EditView: View {
                 }
                 
                 
+                Section {
+                    NavigationLink("How to Play", destination: HowToView())
+                }
+                
+                
+                
                 Button(role: .destructive) {
                     vm.resetData()
                     dismiss()
