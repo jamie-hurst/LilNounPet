@@ -22,6 +22,7 @@ struct DeathView: View {
         Button("Respawn your pet") {
             vm.toggleHatchView()
             vm.disableNotifications()
+            vm.cancelNotifications()
         }
     }
 }

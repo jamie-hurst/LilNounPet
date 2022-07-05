@@ -17,16 +17,23 @@ struct HatchView: View {
         NavigationView {
             Form {
                 
-                HStack {
-                    Spacer()
-                    Text("Lil Noun Pet")
-                        .font(Font.custom("LondrinaSolid-Regular", size: 48, relativeTo: .title))
-                    Spacer()
+                VStack {
+                    HStack {
+                        Spacer()
+                        Text("Lil Noun Pet")
+                            .font(Font.custom("LondrinaSolid-Regular", size: 48, relativeTo: .title))
+                        Spacer()
+                    }
+                    
+                    Image("lilnoun-banner-no-bg")
+                        .interpolation(.none)
+                        .resizable()
+                        .scaledToFit()
                 }
                 .listRowBackground(Color(UIColor.systemGroupedBackground))
                 
                 
-                Section("Name") {
+                Section {
                     TextField("Name your Lil Noun", text:$vm.pet.name)
                         .keyboardType(.alphabet)
                         .disableAutocorrection(true)

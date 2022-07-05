@@ -58,6 +58,7 @@ let healthLevels = [
         isShowingHatchView = true
         pet = Pet(name: "", bio: "", lastMeal: Date(), lastDrink: Date(), body: randomBody(), accessory: randomAccessory(), head: randomHead(), glasses: randomGlasses())
         isNotificationsEnabled = false
+        cancelNotifications()
         saveData()
     }
     
@@ -151,6 +152,11 @@ let healthLevels = [
                 print("Notifications not authorized.")
             }
         }
+    }
+    
+    func cancelNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
     
     

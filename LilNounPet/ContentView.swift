@@ -80,7 +80,7 @@ struct ContentView: View {
     
     //Custom font for NavigationTitle
     init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "LondrinaSolid-Regular", size: 48)!]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "LondrinaSolid-Regular", size: 40)!]
         //Use this if NavigationBarTitle is with displayMode = .inline
         //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "LondrinaSolid-Regular", size: 20)!]
     }

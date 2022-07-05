@@ -12,7 +12,7 @@ struct StatsView: View {
     @EnvironmentObject var vm : ViewModel
     
     var body: some View {
-        Section("Stats") {
+        Section {
             HStack {
                 Text("Age")
                 Spacer()

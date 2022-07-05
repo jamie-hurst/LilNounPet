@@ -10,7 +10,7 @@ import SwiftUI
 struct HowToView: View {
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading) {
             Text("Thanks for playing Lil Noun Pet!")
                 .font(Font.custom("LondrinaSolid-Regular", size: 24, relativeTo: .title))
                 .padding(.bottom)
