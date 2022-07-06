@@ -26,6 +26,10 @@ The key feature I’d like to implement next is a HomeScreen Widget. The ultimat
 
 ![Screen Shot 2022-07-05 at 7 32 54 PM](https://user-images.githubusercontent.com/28959624/177456637-abb654ff-006b-4783-89ce-d235f6ebf914.png)
 
+![Screen Shot 2022-07-05 at 7 40 14 PM](https://user-images.githubusercontent.com/28959624/177456830-5efaf44a-b02c-4730-8195-66d89f5b95eb.png)
+
+
+
 
 ![Screen Shot 2022-07-05 at 7 36 38 PM](https://user-images.githubusercontent.com/28959624/177456663-84696cbb-fa66-425d-8160-ae81808f0efc.png)
 
