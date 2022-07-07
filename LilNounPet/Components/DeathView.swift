@@ -12,7 +12,7 @@ struct DeathView: View {
     
     var body: some View {
         
-        Section("\(vm.pet.name) is dead ☠️") {
+        Section("\(vm.pet.name) lived to be \(vm.pet.ageAtDeath.formatted()) days old ☠️") {
 
             Button("Respawn your pet") {
                 vm.toggleHatchView()
