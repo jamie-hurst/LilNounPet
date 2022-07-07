@@ -22,7 +22,6 @@ The key feature I’d like to implement next is a HomeScreen Widget. The ultimat
 * Step counter to encourage fitness and wellbeing whilst also exercising your Lil Noun
 * Additional game elements inspired by Tamagotchi
 * Animations
-* UI/UX improvements
 
 <img width="366" alt="Screen Shot 2022-07-03 at 10 30 57 PM" src="https://user-images.githubusercontent.com/28959624/177456619-7e971096-12b0-467e-b57d-3e6dd1f0e002.png">
 
