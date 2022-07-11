@@ -18,7 +18,6 @@ The key feature I’d like to implement next is a HomeScreen Widget. The ultimat
 * HomeScreen Widget
 
 #### Future ideas:
-* Option to browse the Lil Nouns collection and choose an existing Lil Noun from the project as your pet
 * Step counter to encourage fitness and wellbeing whilst also exercising your Lil Noun
 * Additional game elements inspired by Tamagotchi
 * Animations
