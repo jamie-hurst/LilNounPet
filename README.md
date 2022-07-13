@@ -25,7 +25,10 @@ The key feature that I'm currently working on implementing is a HomeScreen Widge
 * Additional game elements inspired by Tamagotchi
 * Animations
 
-<img width="366" alt="Screen Shot 2022-07-03 at 10 30 57 PM" src="https://user-images.githubusercontent.com/28959624/177456619-7e971096-12b0-467e-b57d-3e6dd1f0e002.png">
+
+<img width="250" alt="Screen Shot 2022-07-03 at 10 30 57 PM" src="https://user-images.githubusercontent.com/28959624/178802929-792b54be-d04a-4533-874b-88c54ed92195.png">
+
+
 
 ![Screen Shot 2022-07-05 at 7 32 54 PM](https://user-images.githubusercontent.com/28959624/177456637-abb654ff-006b-4783-89ce-d235f6ebf914.png)
 
