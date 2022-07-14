@@ -29,12 +29,6 @@ The key feature that I'm currently working on implementing is a HomeScreen Widge
 <img width="250" alt="Screen Shot 2022-07-03 at 10 30 57 PM" src="https://user-images.githubusercontent.com/28959624/178802929-792b54be-d04a-4533-874b-88c54ed92195.png">
 
 
-
-![Screen Shot 2022-07-05 at 7 32 54 PM](https://user-images.githubusercontent.com/28959624/177456637-abb654ff-006b-4783-89ce-d235f6ebf914.png)
-
-![Screen Shot 2022-07-05 at 7 40 14 PM](https://user-images.githubusercontent.com/28959624/177456830-5efaf44a-b02c-4730-8195-66d89f5b95eb.png)
-
-
 https://user-images.githubusercontent.com/28959624/177457229-4ccf7a41-b0dc-44af-a6ae-95693aab78c2.mov
 
 
