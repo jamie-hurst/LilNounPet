@@ -50,7 +50,13 @@ class ViewModel: ObservableObject {
     
     func resetData() {
         isShowingHatchView = true
+        
         pet.name = ""
+        pet.head = ""
+        pet.body = ""
+        pet.accessory = ""
+        pet.glasses = ""
+        
         cancelNotifications()
         saveData()
     }
