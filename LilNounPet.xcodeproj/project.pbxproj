@@ -38,6 +38,7 @@
 		7DC5B3BF287E3D4000E47669 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8B72867E0E600E625A4 /* ImageView.swift */; };
 		7DF45C7F288A603F0026933B /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF45C7E288A603F0026933B /* SimpleEntry.swift */; };
 		7DF45C80288A61330026933B /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF45C7E288A603F0026933B /* SimpleEntry.swift */; };
+		7DF7E590288A7A760010193C /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF7E58F288A7A760010193C /* Provider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		7DA53BF428724318005A821C /* LondrinaSolid-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Regular.ttf"; sourceTree = "<group>"; };
 		7DA53BF6287243DD005A821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7DF45C7E288A603F0026933B /* SimpleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntry.swift; sourceTree = "<group>"; };
+		7DF7E58F288A7A760010193C /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				7D94472B287D2A3F0039015E /* PetWidget.swift */,
+				7DF7E58F288A7A760010193C /* Provider.swift */,
 				7D94472D287D2A400039015E /* Assets.xcassets */,
 				7DF45C7E288A603F0026933B /* SimpleEntry.swift */,
 				7D94472F287D2A400039015E /* Info.plist */,
@@ -356,6 +359,7 @@
 				7D944738287D2A550039015E /* Pet-Repository.swift in Sources */,
 				7D944739287D2A580039015E /* Pet-Model.swift in Sources */,
 				7D94473A287D2A5B0039015E /* Helpers.swift in Sources */,
+				7DF7E590288A7A760010193C /* Provider.swift in Sources */,
 				7D94473C287D2B1B0039015E /* ViewModel.swift in Sources */,
 				7D94472C287D2A3F0039015E /* PetWidget.swift in Sources */,
 				7DC5B3BF287E3D4000E47669 /* ImageView.swift in Sources */,
