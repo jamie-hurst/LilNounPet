@@ -12,7 +12,7 @@ class PetRepository {
     private var pet: Pet
     
     //shortcut to the documents directory save path
-    let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedData")
+    let savePath = FileManager.sharedDocumentsDirectory.appendingPathComponent("SavedData")
     
     //loading in data from the documents directory
     init() {

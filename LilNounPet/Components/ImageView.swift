@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ImageView: View {
     @EnvironmentObject var vm : ViewModel
@@ -51,15 +52,11 @@ struct ImageView: View {
                             .resizable()
                             .scaledToFit()
                     }
-                    
                 }
             }
-            .frame(width: 280, height: 280)
             
             
         }
-        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-        
     }
 }
 

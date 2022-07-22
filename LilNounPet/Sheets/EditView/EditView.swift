@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct EditView: View {
     @EnvironmentObject var vm : ViewModel
@@ -69,6 +70,7 @@ struct EditView: View {
             .toolbar {
                 Button("Done") {
                     vm.saveData()
+                    WidgetCenter.shared.reloadAllTimelines()
                     dismiss()
                 }
             }

@@ -13,16 +13,9 @@ enum NeedType {
     case thirst, hunger
 }
 
-let healthLevels = [
-    1: "♥︎♡♡♡♡♡",
-    2: "♥︎♥︎♡♡♡♡",
-    3: "♥︎♥︎♥︎♡♡♡",
-    4: "♥︎♥︎♥︎♥︎♡♡",
-    5: "♥︎♥︎♥︎♥︎♥︎♡",
-    6: "♥︎♥︎♥︎♥︎♥︎♥︎",
-]
 
-@MainActor class ViewModel: ObservableObject {
+
+class ViewModel: ObservableObject {
     @Published var pet: Pet
     private var repository = PetRepository()
     
@@ -35,7 +28,8 @@ let healthLevels = [
     @AppStorage("isShowingHatchView") var isShowingHatchView = true
     
     //saves the background user selects with UserDefaults
-    @AppStorage("chosenBackground") var chosenBackground = 0
+    @AppStorage("chosenBackground", store: UserDefaults(suiteName: "group.com.LilNounPet.shared")) var chosenBackground = 0
+//    @AppStorage("chosenBackground") var chosenBackground = 0
     let backgroundsArray = ["pink", "green", "cool", "warm", "black"]
     
     @AppStorage("chosenTheme") var chosenTheme = 0
@@ -56,8 +50,7 @@ let healthLevels = [
     
     func resetData() {
         isShowingHatchView = true
-        pet = Pet(name: "", bio: "", lastMeal: Date(), lastDrink: Date(), body: randomBody(), accessory: randomAccessory(), head: randomHead(), glasses: randomGlasses())
-        isNotificationsEnabled = false
+        pet.name = ""
         cancelNotifications()
         saveData()
     }

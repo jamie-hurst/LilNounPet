@@ -93,17 +93,34 @@ struct Pet: Codable {
         return int
     }
     
+//    var thirst: Int {
+//        let timeSince = calcTimeSince(date: lastDrink)
+//        var int = 0
+//
+//        switch timeSince {
+//        case 0..<7200: int = 6
+//        case 7200..<14400: int = 5
+//        case 14400..<21600: int = 4
+//        case 21600..<28800: int = 3
+//        case 28800..<36000: int = 2
+//        case 36000...: int = 1
+//        default: int = 0
+//        }
+//
+//        return int
+//    }
+    
     var thirst: Int {
         let timeSince = calcTimeSince(date: lastDrink)
         var int = 0
         
         switch timeSince {
-        case 0..<7200: int = 6
-        case 7200..<14400: int = 5
-        case 14400..<21600: int = 4
-        case 21600..<28800: int = 3
-        case 28800..<36000: int = 2
-        case 36000...: int = 1
+        case 0..<300: int = 6
+        case 300..<600: int = 5
+        case 600..<900: int = 4
+        case 900..<1200: int = 3
+        case 1200..<1500: int = 2
+        case 1500...: int = 1
         default: int = 0
         }
         

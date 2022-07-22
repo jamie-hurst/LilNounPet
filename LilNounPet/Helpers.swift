@@ -13,13 +13,13 @@ func calcTimeSince(date: Date) -> Int {
 }
 
 extension FileManager {
-    static var documentsDirectory: URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        // just send back the first one, which ought to be the only one
-        return paths[0]
+    static var sharedDocumentsDirectory: URL {
+        let url = FileManager.default.containerURL(
+            forSecurityApplicationGroupIdentifier: "group.com.LilNounPet.shared")!
+        return url
     }
 }
+
 
 extension ShapeStyle where Self == Color {
     

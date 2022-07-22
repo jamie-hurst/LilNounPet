@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+let healthLevels = [
+    1: "♥︎♡♡♡♡♡",
+    2: "♥︎♥︎♡♡♡♡",
+    3: "♥︎♥︎♥︎♡♡♡",
+    4: "♥︎♥︎♥︎♥︎♡♡",
+    5: "♥︎♥︎♥︎♥︎♥︎♡",
+    6: "♥︎♥︎♥︎♥︎♥︎♥︎",
+]
+
 struct StatsView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var vm : ViewModel

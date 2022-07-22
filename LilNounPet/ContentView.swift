@@ -22,6 +22,7 @@ struct ContentView: View {
         NavigationView {
             Form {
                 ImageView()
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
                 if vm.pet.isAlive {
                     StatsView()
