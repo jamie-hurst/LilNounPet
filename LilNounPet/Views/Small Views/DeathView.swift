@@ -13,13 +13,12 @@ struct DeathView: View {
     var body: some View {
         
         Section("\(vm.pet.name) lived to be \(vm.pet.ageAtDeath, specifier: "%.2f") days old") {
-
+            
             Button("Respawn your pet") {
                 vm.toggleHatchView()
                 vm.cancelNotifications()
             }
         }
-        
         
     }
 }

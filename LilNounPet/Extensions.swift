@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-func calcTimeSince(date: Date) -> Int {
-    let seconds = Int(-date.timeIntervalSinceNow)
-    return seconds
+
+extension String {
+    var isReallyEmpty: Bool {
+        self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
 }
 
 extension FileManager {
@@ -20,7 +22,7 @@ extension FileManager {
     }
 }
 
-
+//Dracula Pro theme for custom dark mode colors
 extension ShapeStyle where Self == Color {
     
     static var dracWhite: Color {
@@ -61,8 +63,7 @@ extension ShapeStyle where Self == Color {
 
 }
 
-extension String {
-    var isReallyEmpty: Bool {
-        self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
+func calcTimeSince(date: Date) -> Int {
+    let seconds = Int(-date.timeIntervalSinceNow)
+    return seconds
 }

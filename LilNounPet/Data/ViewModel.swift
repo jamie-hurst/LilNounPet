@@ -13,8 +13,7 @@ enum NeedType {
     case thirst, hunger
 }
 
-
-
+@MainActor
 class ViewModel: ObservableObject {
     @Published var pet: Pet
     private var repository = PetRepository()
@@ -106,6 +105,13 @@ class ViewModel: ObservableObject {
     
     
     //hatching
+    var isHatchViewValid: Bool {
+        if pet.name.isReallyEmpty {
+            return false
+        }
+        return true
+    }
+    
     func hatchPet() {
         pet.birthday = Date()
         pet.bio = ""
@@ -123,12 +129,6 @@ class ViewModel: ObservableObject {
         isShowingHatchView.toggle()
     }
     
-    var isHatchViewValid: Bool {
-        if pet.name.isReallyEmpty {
-            return false
-        }
-        return true
-    }
     
     
     //haptic feedback
@@ -136,8 +136,6 @@ class ViewModel: ObservableObject {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
     }
-    
-    
     
     
     

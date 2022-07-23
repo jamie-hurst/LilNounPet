@@ -11,7 +11,7 @@ import SwiftUI
 class PetRepository {
     private var pet: Pet
     
-    //shortcut to the documents directory save path
+    //shortcut to the shared documents directory save path
     let savePath = FileManager.sharedDocumentsDirectory.appendingPathComponent("SavedData")
     
     //loading in data from the documents directory
@@ -24,6 +24,7 @@ class PetRepository {
         }
 
         pet = Pet(name: "", bio: "", lastMeal: Date(), lastDrink: Date(), body: "", accessory: "", head: "", glasses: "")
+        print("failed to load data from pet repository")
     }
     
     func loadData() -> Pet {
