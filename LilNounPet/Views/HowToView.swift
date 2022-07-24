@@ -17,7 +17,7 @@ struct HowToView: View {
               
             
             Text("""
-                Your unique Lil Noun is randomly generated based on a large set of traits when the pet is hatched. Your pet’s appearance reflects its current state. If your pet is asleep, its eyes will be closed. If your pet dies, its eyes will be crossed out, etc.
+                Prevent your Lil Noun’s slow march toward doom by providing it with food and water. Think Tamagotchi, but with Lil Nouns cc0 artwork! Your unique Lil Noun is randomly generated based on a large set of traits when the pet is hatched. Your pet’s appearance reflects its current state. If your pet is asleep, its eyes will be closed. If your pet dies, its eyes will be crossed out, etc.
                 
                 Your pet will perish if it hasn't been fed for 24 hours or given water for 12 hours. You can enable notifications to be notified 2 hours before your pet will pass away.
                 """)
@@ -28,7 +28,7 @@ struct HowToView: View {
                 .padding(.bottom)
             
             Text("""
-                The HomeScreen Widget is currently under development. The widget content will only refresh when the main app is opened.
+                The HomeScreen Widget is under development. The widget content will currently only refresh when the main app is opened.
                 """)
         }
         .padding(.horizontal)
