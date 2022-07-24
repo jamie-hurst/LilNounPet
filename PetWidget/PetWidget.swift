@@ -15,8 +15,8 @@ struct PetWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             PetWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Lil Noun Pet Widget")
+        .description("Currently in beta. The widget content will only refresh when the main app is opened.")
         .supportedFamilies([.systemSmall])
     }
 }
