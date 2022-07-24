@@ -63,7 +63,4 @@ extension ShapeStyle where Self == Color {
 
 }
 
-func calcTimeSince(date: Date) -> Int {
-    let seconds = Int(-date.timeIntervalSinceNow)
-    return seconds
-}
+

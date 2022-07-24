@@ -30,7 +30,7 @@ struct Provider: TimelineProvider {
         )
         
         // Create a date that's 15 minutes in the future.
-        let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: date)!
+//        let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: date)!
         
         // Create the timeline with the entry and a reload policy with the date
         // for the next update.

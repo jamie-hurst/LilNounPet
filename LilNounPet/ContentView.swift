@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-   
-    
-    
     @Environment(\.colorScheme) var colorScheme
     @StateObject private var vm = ViewModel()
     

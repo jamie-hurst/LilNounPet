@@ -143,3 +143,8 @@ struct Pet: Codable {
     
 }
 
+func calcTimeSince(date: Date) -> Int {
+    let seconds = Int(-date.timeIntervalSinceNow)
+    return seconds
+}
+
