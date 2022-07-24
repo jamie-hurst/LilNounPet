@@ -45,13 +45,7 @@ struct StatsView: View {
                     .foregroundColor(colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme])
             }
         }
-        
-//        Section {
-//            Text("birthday: \(vm.pet.birthday.formatted())")
-//            Text("last meal: \(vm.pet.lastMeal.formatted())")
-//            Text("last drink: \(vm.pet.lastDrink.formatted())")
-//        }
-        
+
     }
 }
 

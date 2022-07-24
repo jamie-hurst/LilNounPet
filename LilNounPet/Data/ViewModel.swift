@@ -29,7 +29,7 @@ class ViewModel: ObservableObject {
     
     //saves the background user selects with UserDefaults
     @AppStorage("chosenBackground", store: UserDefaults(suiteName: "group.com.LilNounPet.shared")) var chosenBackground = 0
-    let backgroundsArray = ["pink", "green", "cool", "warm", "black"]
+    let backgroundsArray = ["cool", "warm", "pink", "black"]
     
     @AppStorage("chosenTheme") var chosenTheme = 0
     let darkThemes: [Color] = [.dracPink, .dracGreen, .dracPurple, .dracCyan, .dracOrange, .dracRed, .dracYellow, .primary]
