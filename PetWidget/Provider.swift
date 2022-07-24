@@ -36,7 +36,7 @@ struct Provider: TimelineProvider {
         // for the next update.
         let timeline = Timeline(
             entries:[entry],
-            policy: .after(nextUpdateDate)
+            policy: .never
         )
         
         // Call the completion to pass the timeline to WidgetKit.
@@ -47,9 +47,9 @@ struct Provider: TimelineProvider {
         let archiveURL = FileManager.sharedDocumentsDirectory.appendingPathComponent("SavedData")
         
         let decoder = JSONDecoder()
-        if let codeData = try? Data(contentsOf: archiveURL) {
+        if let data = try? Data(contentsOf: archiveURL) {
             do {
-                let contents = try decoder.decode(Pet.self, from: codeData)
+                let contents = try decoder.decode(Pet.self, from: data)
                 return contents
             } catch {
                 print("Error: Can't decode contents")

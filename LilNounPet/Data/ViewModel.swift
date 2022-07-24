@@ -20,6 +20,7 @@ class ViewModel: ObservableObject {
     
     @Published var isShowingEditView = false
     
+    
     //retains user preference for notification settings
     @AppStorage("isNotificationsEnabled") var isNotificationsEnabled = false
     
@@ -28,7 +29,6 @@ class ViewModel: ObservableObject {
     
     //saves the background user selects with UserDefaults
     @AppStorage("chosenBackground", store: UserDefaults(suiteName: "group.com.LilNounPet.shared")) var chosenBackground = 0
-//    @AppStorage("chosenBackground") var chosenBackground = 0
     let backgroundsArray = ["pink", "green", "cool", "warm", "black"]
     
     @AppStorage("chosenTheme") var chosenTheme = 0
@@ -96,7 +96,6 @@ class ViewModel: ObservableObject {
     }
     
     func randomizeTraits() {
-        
         pet.body = randomBody()
         pet.accessory = randomAccessory()
         pet.head = randomHead()
@@ -189,14 +188,14 @@ class ViewModel: ObservableObject {
             var hoursUntilWarning = 0
             
             if needType == .thirst {
-            content.title = "Your Pet is Thirsty"
-            content.subtitle = "Give it water or it will die."
+                content.title = "\(self.pet.name) is Thirsty"
+            content.subtitle = "Give it water or it will die in 2 hours."
             hoursUntilWarning = 10
             }
             
             if needType == .hunger {
-            content.title = "Your Pet is Hungry"
-            content.subtitle = "Give it food or it will die."
+            content.title = "\(self.pet.name) is Hungry"
+            content.subtitle = "Give it food or it will die in 2 hours."
             hoursUntilWarning = 22
             }
             
