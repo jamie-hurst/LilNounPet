@@ -39,6 +39,8 @@ struct HatchView: View {
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
+                    NavigationLink("How to Play", destination: HowToView())
+                    
                     Toggle("Enable notifications", isOn: $vm.isNotificationsEnabled)
                         .onChange(of: vm.isNotificationsEnabled) { _ in
                             if vm.isNotificationsEnabled {
