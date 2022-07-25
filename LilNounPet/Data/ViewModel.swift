@@ -32,8 +32,8 @@ class ViewModel: ObservableObject {
     let backgroundsArray = ["cool", "warm", "pink", "black"]
     
     @AppStorage("chosenTheme") var chosenTheme = 0
-    let darkThemes: [Color] = [.dracPink, .dracGreen, .dracPurple, .dracCyan, .dracOrange, .dracRed, .dracYellow, .primary]
-    let lightThemes: [Color] = [.pink, .green, .purple, .cyan, .orange, .red, .yellow, .primary]
+    let darkThemes: [Color] = [.primary, .dracPink, .dracGreen, .dracPurple, .dracCyan, .dracOrange, .dracRed, .dracYellow]
+    let lightThemes: [Color] = [.primary, .pink, .green, .purple, .cyan, .orange, .red, .yellow]
     
     
     
