@@ -11,7 +11,7 @@ import SwiftUI
 
 struct PetWidgetEntryView : View {
     @AppStorage("chosenBackground", store: UserDefaults(suiteName: "group.com.LilNounPet.shared")) var chosenBackground = 0
-    let backgroundsArray = ["pink", "green", "cool", "warm", "black"]
+    let backgroundsArray = ["cool", "warm", "pink", "black"]
     
     var entry: SimpleEntry
     
