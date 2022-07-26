@@ -8,6 +8,9 @@ Prevent your Lil Noun’s slow march toward doom by providing it with food and w
 
 The key feature that I'm currently working on implementing is a HomeScreen Widget. The ultimate goal of this app is being able to see your pet Lil Noun right next to your favorite iOS apps on the HomeScreen. 
 
+[Download the TestFlight Beta](https://testflight.apple.com/join/xbAAiLmE)
+
+
 ![IMG_1538 copy](https://user-images.githubusercontent.com/28959624/178801452-431caa61-d3a2-4885-bb34-06b6096f6e7c.PNG)
 
 
