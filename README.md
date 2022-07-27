@@ -17,6 +17,7 @@ Prevent your Lil Noun’s slow march toward doom by providing it with food and w
 
 #### Currently in development:
 * HomeScreen Widget
+* Ability to save your hatched pet to the camera roll
 
 #### Future ideas:
 * Step counter to encourage fitness and wellbeing whilst also exercising your Lil Noun
