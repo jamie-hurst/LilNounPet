@@ -9,9 +9,6 @@ Prevent your Lil Noun’s slow march toward doom by providing it with food and w
 [Download the TestFlight Beta](https://testflight.apple.com/join/xbAAiLmE)
 
 
-![IMG_1538 copy](https://user-images.githubusercontent.com/28959624/178801452-431caa61-d3a2-4885-bb34-06b6096f6e7c.PNG)
-
-
 #### Current features:
 * All traits from the Lil Nouns cc0 project included
 * Customize your UI with a unique accent color
