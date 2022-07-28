@@ -9,6 +9,7 @@ import SwiftUI
 
 class ImageSaver: NSObject {
     
+    //writes to photo album and saves as a PNG file
     func writeToPhotoAlbum(image: UIImage) {
         guard let imageData = image.pngData() else { return }
         guard let pngImage = UIImage(data: imageData) else { return }

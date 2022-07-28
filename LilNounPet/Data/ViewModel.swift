@@ -17,6 +17,7 @@ enum NeedType {
 class ViewModel: ObservableObject {
     @Published var pet: Pet
     private var repository = PetRepository()
+    private var imageSaver = ImageSaver()
     
     @Published var isShowingEditView = false
     
@@ -71,6 +72,11 @@ class ViewModel: ObservableObject {
         pet.lastDrink = Date()
         addNotificationIfEnabled(for: .thirst)
         saveData()
+    }
+    
+    //saves the image in standard 500x500 pixel sizing in PNG format
+    func saveImage(image: UIImage) {
+        imageSaver.writeToPhotoAlbum(image: image.resize(targetSize: CGSize(width: 166.6, height: 166.6)))
     }
     
     

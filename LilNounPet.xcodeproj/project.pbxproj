@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D304CDC289302990080B0A7 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D304CDB289302990080B0A7 /* ImageSaver.swift */; };
 		7D85C89E2867D53400E625A4 /* LilNounPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C89D2867D53400E625A4 /* LilNounPetApp.swift */; };
 		7D85C8A02867D53400E625A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C89F2867D53400E625A4 /* ContentView.swift */; };
 		7D85C8A22867D53600E625A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D85C8A12867D53600E625A4 /* Assets.xcassets */; };
@@ -36,6 +35,8 @@
 		7D94473E287D2B5D0039015E /* ArtAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8AB2867D83C00E625A4 /* ArtAssets.swift */; };
 		7DA53BF3287233AD005A821C /* HowToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA53BF2287233AD005A821C /* HowToView.swift */; };
 		7DA53BF528724318005A821C /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DA53BF428724318005A821C /* LondrinaSolid-Regular.ttf */; };
+		7DD766FC2893087A002708BE /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD766FB2893086A002708BE /* ImageSaver.swift */; };
+		7DD766FD2893087A002708BE /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD766FB2893086A002708BE /* ImageSaver.swift */; };
 		7DF45C7F288A603F0026933B /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF45C7E288A603F0026933B /* SimpleEntry.swift */; };
 		7DF45C80288A61330026933B /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF45C7E288A603F0026933B /* SimpleEntry.swift */; };
 		7DF7E590288A7A760010193C /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF7E58F288A7A760010193C /* Provider.swift */; };
@@ -67,7 +68,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7D304CDB289302990080B0A7 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		7D85C89A2867D53400E625A4 /* LilNounPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LilNounPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D85C89D2867D53400E625A4 /* LilNounPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LilNounPetApp.swift; sourceTree = "<group>"; };
 		7D85C89F2867D53400E625A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +94,7 @@
 		7DA53BF2287233AD005A821C /* HowToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToView.swift; sourceTree = "<group>"; };
 		7DA53BF428724318005A821C /* LondrinaSolid-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Regular.ttf"; sourceTree = "<group>"; };
 		7DA53BF6287243DD005A821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7DD766FB2893086A002708BE /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		7DF45C7E288A603F0026933B /* SimpleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntry.swift; sourceTree = "<group>"; };
 		7DF7E58F288A7A760010193C /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		7DF7E591288B9B540010193C /* PetWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWidgetEntryView.swift; sourceTree = "<group>"; };
@@ -212,7 +213,7 @@
 				7D85C8B32867DDFC00E625A4 /* ViewModel.swift */,
 				7D85C8AD2867DB3B00E625A4 /* Pet-Repository.swift */,
 				7D85C8AF2867DBA900E625A4 /* Pet-Model.swift */,
-				7D304CDB289302990080B0A7 /* ImageSaver.swift */,
+				7DD766FB2893086A002708BE /* ImageSaver.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -338,7 +339,7 @@
 				7D85C8BF28682E2600E625A4 /* EditView.swift in Sources */,
 				7D85C8B22867DBDE00E625A4 /* Extensions.swift in Sources */,
 				7D85C8A02867D53400E625A4 /* ContentView.swift in Sources */,
-				7D304CDC289302990080B0A7 /* ImageSaver.swift in Sources */,
+				7DD766FD2893087A002708BE /* ImageSaver.swift in Sources */,
 				7D85C8AE2867DB3B00E625A4 /* Pet-Repository.swift in Sources */,
 				7D85C8BC28682DEC00E625A4 /* DeathView.swift in Sources */,
 				7D85C89E2867D53400E625A4 /* LilNounPetApp.swift in Sources */,
@@ -360,6 +361,7 @@
 				7DF7E590288A7A760010193C /* Provider.swift in Sources */,
 				7D94473C287D2B1B0039015E /* ViewModel.swift in Sources */,
 				7D94472C287D2A3F0039015E /* PetWidget.swift in Sources */,
+				7DD766FC2893087A002708BE /* ImageSaver.swift in Sources */,
 				7D94473E287D2B5D0039015E /* ArtAssets.swift in Sources */,
 				7DF7E592288B9B540010193C /* PetWidgetEntryView.swift in Sources */,
 			);
@@ -506,7 +508,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LilNounPet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Lil Noun Pet";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save your Lil Noun photo.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save your Lil Noun to the camera roll";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -542,7 +544,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LilNounPet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Lil Noun Pet";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save your Lil Noun photo.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save your Lil Noun to the camera roll";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
