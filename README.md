@@ -15,7 +15,7 @@ Prevent your Lil Noun’s slow march toward doom by providing it with food and w
 * Local push notifications when your pet is close to death
 
 #### Currently in development:
-* HomeScreen Widget (currently functional, but in beta)
+* HomeScreen Widget
 * Ability to save your hatched pet to the camera roll
 
 #### Future ideas:
