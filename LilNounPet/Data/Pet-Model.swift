@@ -116,7 +116,7 @@ struct Pet: Codable {
         } else if !isAwake {
             return "sleep"
         } else {
-            return self.glasses
+            return ""
         }
     }
     

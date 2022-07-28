@@ -13,10 +13,10 @@ struct ImageView: View {
     
     var body: some View {
         let compositePetImage: UIImage = UIImage(named: vm.backgroundsArray[vm.chosenBackground])!
-            .mergeWith(layer1: UIImage(named: vm.pet.body)!,
-                       layer2: UIImage(named: vm.pet.accessory)!,
-                       layer3: UIImage(named: vm.pet.head)!,
-                       layer4: UIImage(named: vm.pet.glasses)!)
+            .createCompositeImage(layer2: UIImage(named: vm.pet.body)!,
+                       layer3: UIImage(named: vm.pet.accessory)!,
+                       layer4: UIImage(named: vm.pet.head)!,
+                       layer5: UIImage(named: vm.pet.glasses)!)
         
         
         ZStack {
@@ -43,10 +43,12 @@ struct ImageView: View {
                         .interpolation(.none)
                         .resizable()
                         .scaledToFit()
-                    Image(vm.pet.eyeExpression)
-                        .interpolation(.none)
-                        .resizable()
-                        .scaledToFit()
+                    if !vm.pet.eyeExpression.isEmpty {
+                        Image(vm.pet.eyeExpression)
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                    }
                     if !vm.pet.hungerExpression.isEmpty {
                         Image(vm.pet.hungerExpression)
                             .interpolation(.none)
@@ -66,7 +68,7 @@ struct ImageView: View {
         }
         .contextMenu {
                Button {
-                   vm.saveImage(image: compositePetImage)
+                   vm.savePetImageToPhotoAlbum(image: compositePetImage)
                } label: {
                    Label("Save Photo", systemImage: "square.and.arrow.down")
                }

@@ -64,28 +64,25 @@ extension ShapeStyle where Self == Color {
 }
 
 extension UIImage {
-    func mergeWith(layer1: UIImage, layer2: UIImage, layer3: UIImage, layer4: UIImage) -> UIImage {
+    func createCompositeImage(layer2: UIImage, layer3: UIImage, layer4: UIImage, layer5: UIImage) -> UIImage {
         let bottomImage = self
         
         UIGraphicsBeginImageContext(size)
         
-        
         let areaSize = CGRect(x: 0, y: 0, width: bottomImage.size.width, height: bottomImage.size.height)
         bottomImage.draw(in: areaSize)
         
-        layer1.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
         layer2.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
         layer3.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
         layer4.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
+        layer5.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
         
         
         let mergedImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return mergedImage
     }
-}
-
-extension UIImage {
+     
     func resize(targetSize: CGSize, interpolationQuality: CGInterpolationQuality = .none) -> UIImage {
         return UIGraphicsImageRenderer(size:targetSize).image { context in
             context.cgContext.interpolationQuality = interpolationQuality

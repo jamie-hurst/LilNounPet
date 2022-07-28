@@ -39,10 +39,12 @@ struct PetWidgetEntryView : View {
                         .interpolation(.none)
                         .resizable()
                         .scaledToFit()
-                    Image(entry.pet.eyeExpression)
-                        .interpolation(.none)
-                        .resizable()
-                        .scaledToFit()
+                    if !entry.pet.eyeExpression.isEmpty {
+                        Image(entry.pet.eyeExpression)
+                            .interpolation(.none)
+                            .resizable()
+                            .scaledToFit()
+                    }
                     if !entry.pet.hungerExpression.isEmpty {
                         Image(entry.pet.hungerExpression)
                             .interpolation(.none)

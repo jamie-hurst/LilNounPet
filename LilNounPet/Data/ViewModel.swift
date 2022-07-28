@@ -75,7 +75,7 @@ class ViewModel: ObservableObject {
     }
     
     //saves the image in standard 500x500 pixel sizing in PNG format
-    func saveImage(image: UIImage) {
+    func savePetImageToPhotoAlbum(image: UIImage) {
         imageSaver.writeToPhotoAlbum(image: image.resize(targetSize: CGSize(width: 166.6, height: 166.6)))
     }
     
