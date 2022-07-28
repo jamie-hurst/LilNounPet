@@ -85,4 +85,11 @@ extension UIImage {
     }
 }
 
-
+extension UIImage {
+    func resize(targetSize: CGSize, interpolationQuality: CGInterpolationQuality = .none) -> UIImage {
+        return UIGraphicsImageRenderer(size:targetSize).image { context in
+            context.cgContext.interpolationQuality = interpolationQuality
+            self.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+    }
+}
