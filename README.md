@@ -12,11 +12,11 @@ Prevent your Lil Noun’s slow march toward doom by providing it with food and w
 * All traits from the Lil Nouns cc0 project included
 * Customize your UI with a unique accent color
 * Dracula theme dark mode
+* Save your pet to the camera roll
 * Local push notifications when your pet is close to death
 
 #### Currently in development:
 * HomeScreen Widget
-* Ability to save your hatched pet to the camera roll
 
 #### Future ideas:
 * Step counter to encourage fitness and wellbeing whilst also exercising your Lil Noun
