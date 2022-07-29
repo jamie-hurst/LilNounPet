@@ -75,8 +75,19 @@ class ViewModel: ObservableObject {
     }
     
     //saves the image in standard 500x500 pixel sizing in PNG format
-    func savePetImageToPhotoAlbum(image: UIImage) {
-        imageSaver.writeToPhotoAlbum(image: image.resize(targetSize: CGSize(width: 166.6, height: 166.6)))
+    func savePetImageToPhotoAlbum() {
+        
+        if !pet.isPetEmpty {
+            let compositePetImage: UIImage = UIImage(named: backgroundsArray[chosenBackground])!
+                .createCompositeImage(layer2: UIImage(named: pet.body)!,
+                                      layer3: UIImage(named: pet.accessory)!,
+                                      layer4: UIImage(named: pet.head)!,
+                                      layer5: UIImage(named: pet.glasses)!)
+            
+            imageSaver.writeToPhotoAlbum(image: compositePetImage.resize(targetSize: CGSize(width: 166.6, height: 166.6)))
+        } else {
+            print("Error saving the composite image or writing to the Photo album.")
+        }
     }
     
     
@@ -182,7 +193,7 @@ class ViewModel: ObservableObject {
         addNotificationIfEnabled(for: .thirst)
         addNotificationIfEnabled(for: .hunger)
     }
-
+    
     
     //adds local notification for impending pet death
     private func addNotification(for needType: NeedType) {
@@ -195,21 +206,21 @@ class ViewModel: ObservableObject {
             
             if needType == .thirst {
                 content.title = "\(self.pet.name) is Thirsty"
-            content.subtitle = "Give it water or it will die in 2 hours."
-            hoursUntilWarning = 10
+                content.subtitle = "Give it water or it will die in 2 hours."
+                hoursUntilWarning = 10
             }
             
             if needType == .hunger {
-            content.title = "\(self.pet.name) is Hungry"
-            content.subtitle = "Give it food or it will die in 2 hours."
-            hoursUntilWarning = 22
+                content.title = "\(self.pet.name) is Hungry"
+                content.subtitle = "Give it food or it will die in 2 hours."
+                hoursUntilWarning = 22
             }
             
             let nextTriggerDate = Calendar.current.date(byAdding: .hour, value: hoursUntilWarning, to: Date()) ?? Date.now
             let comps = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: nextTriggerDate)
-
+            
             let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
- 
+            
             let request = UNNotificationRequest(identifier: (needType == .thirst ? "thirst" : "hunger"), content: content, trigger: trigger)
             center.add(request)
         }

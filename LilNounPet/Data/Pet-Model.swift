@@ -58,6 +58,12 @@ struct Pet: Codable {
         }
     }
     
+    var isPetEmpty: Bool {
+        if body.isEmpty || accessory.isEmpty || head.isEmpty || glasses.isEmpty {
+            return true
+        } else { return false }
+    }
+    
     var isAwake: Bool {
         let calendar = Calendar.current
         let now = Date()

@@ -12,11 +12,7 @@ struct ImageView: View {
     @EnvironmentObject var vm : ViewModel
     
     var body: some View {
-        let compositePetImage: UIImage = UIImage(named: vm.backgroundsArray[vm.chosenBackground])!
-            .createCompositeImage(layer2: UIImage(named: vm.pet.body)!,
-                       layer3: UIImage(named: vm.pet.accessory)!,
-                       layer4: UIImage(named: vm.pet.head)!,
-                       layer5: UIImage(named: vm.pet.glasses)!)
+        
         
         
         ZStack {
@@ -25,7 +21,7 @@ struct ImageView: View {
                 .scaledToFill()
             ZStack {
                 //only display the frog if it has been hatched; these string values are empty until the hatchview done "button" is pressed
-                if !vm.pet.body.isEmpty || !vm.pet.accessory.isEmpty || !vm.pet.head.isEmpty || !vm.pet.glasses.isEmpty {
+                if !vm.pet.isPetEmpty {
                     
                     Image(vm.pet.body)
                         .interpolation(.none)
@@ -67,12 +63,12 @@ struct ImageView: View {
             
         }
         .contextMenu {
-               Button {
-                   vm.savePetImageToPhotoAlbum(image: compositePetImage)
-               } label: {
-                   Label("Save Photo", systemImage: "square.and.arrow.down")
-               }
-           }
+            Button {
+                vm.savePetImageToPhotoAlbum()
+            } label: {
+                Label("Save to Photos", systemImage: "square.and.arrow.down")
+            }
+        }
     }
 }
 
