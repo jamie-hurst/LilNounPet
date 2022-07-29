@@ -74,23 +74,6 @@ class ViewModel: ObservableObject {
         saveData()
     }
     
-    //saves the image in standard 500x500 pixel sizing in PNG format
-    func savePetImageToPhotoAlbum() {
-        
-        if !pet.isPetEmpty {
-            let compositePetImage: UIImage = UIImage(named: backgroundsArray[chosenBackground])!
-                .createCompositeImage(layer2: UIImage(named: pet.body)!,
-                                      layer3: UIImage(named: pet.accessory)!,
-                                      layer4: UIImage(named: pet.head)!,
-                                      layer5: UIImage(named: pet.glasses)!)
-            
-            imageSaver.writeToPhotoAlbum(image: compositePetImage.resize(targetSize: CGSize(width: 166.6, height: 166.6)))
-        } else {
-            print("Error saving the composite image or writing to the Photo album.")
-        }
-    }
-    
-    
     //functions to assign random properties when the pet data is reset
     func randomBody() -> String {
         let randomBody = Int.random(in: 0..<bodiesArray.count)
@@ -145,6 +128,20 @@ class ViewModel: ObservableObject {
         isShowingHatchView.toggle()
     }
     
+    //saves the image in standard 500x500 pixel sizing in PNG format
+    func savePetImageToPhotoAlbum() {
+        if !pet.isPetEmpty {
+            let compositePetImage: UIImage = UIImage(named: backgroundsArray[chosenBackground])!
+                .createCompositeImage(layer2: UIImage(named: pet.body)!,
+                                      layer3: UIImage(named: pet.accessory)!,
+                                      layer4: UIImage(named: pet.head)!,
+                                      layer5: UIImage(named: pet.glasses)!)
+            
+            imageSaver.writeToPhotoAlbum(image: compositePetImage.resize(targetSize: CGSize(width: 166.6, height: 166.6)))
+        } else {
+            print("Error saving the composite image or writing to the Photo album.")
+        }
+    }
     
     
     //haptic feedback
