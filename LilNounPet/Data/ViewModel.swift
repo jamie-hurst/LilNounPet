@@ -16,11 +16,10 @@ enum NeedType {
 @MainActor
 class ViewModel: ObservableObject {
     @Published var pet: Pet
-    private var repository = PetRepository()
-    private var imageSaver = ImageSaver()
-    
     @Published var isShowingEditView = false
     
+    private var repository = PetRepository()
+    private var imageSaver = ImageSaver()
     
     //retains user preference for notification settings
     @AppStorage("isNotificationsEnabled") var isNotificationsEnabled = false
