@@ -20,7 +20,7 @@ struct ImageView: View {
                 .resizable()
                 .scaledToFill()
             ZStack {
-                //only display the frog if it has been hatched; these string values are empty until the hatchview done "button" is pressed
+                //only display the pet if it has been hatched; these string values are empty until the hatchview done "button" is pressed
                 if !vm.pet.isPetEmpty {
                     
                     Image(vm.pet.body)

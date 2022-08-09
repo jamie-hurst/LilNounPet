@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D744F3828A1CEFD008FCDEA /* BuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D744F3728A1CEFD008FCDEA /* BuilderView.swift */; };
+		7D744F3A28A1D178008FCDEA /* IntDoubleBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D744F3928A1D178008FCDEA /* IntDoubleBinding.swift */; };
 		7D85C89E2867D53400E625A4 /* LilNounPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C89D2867D53400E625A4 /* LilNounPetApp.swift */; };
 		7D85C8A02867D53400E625A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C89F2867D53400E625A4 /* ContentView.swift */; };
 		7D85C8A22867D53600E625A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D85C8A12867D53600E625A4 /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7D744F3728A1CEFD008FCDEA /* BuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderView.swift; sourceTree = "<group>"; };
+		7D744F3928A1D178008FCDEA /* IntDoubleBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntDoubleBinding.swift; sourceTree = "<group>"; };
 		7D85C89A2867D53400E625A4 /* LilNounPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LilNounPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D85C89D2867D53400E625A4 /* LilNounPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LilNounPetApp.swift; sourceTree = "<group>"; };
 		7D85C89F2867D53400E625A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				7D85C89D2867D53400E625A4 /* LilNounPetApp.swift */,
 				7D85C89F2867D53400E625A4 /* ContentView.swift */,
 				7D85C8B12867DBDE00E625A4 /* Extensions.swift */,
+				7D744F3928A1D178008FCDEA /* IntDoubleBinding.swift */,
 				7D85C8BD28682E1700E625A4 /* Views */,
 				7DA53BF82872471C005A821C /* Data */,
 				7D85C8B52867DEF000E625A4 /* Assets */,
@@ -180,6 +185,7 @@
 				7D85C8BE28682E2600E625A4 /* EditView.swift */,
 				7DA53BF2287233AD005A821C /* HowToView.swift */,
 				7D85C8C028682E9500E625A4 /* HatchView.swift */,
+				7D744F3728A1CEFD008FCDEA /* BuilderView.swift */,
 				7DF7E593288BA4590010193C /* Small Views */,
 			);
 			path = Views;
@@ -346,6 +352,8 @@
 				7D85C8AC2867D83C00E625A4 /* ArtAssets.swift in Sources */,
 				7DA53BF3287233AD005A821C /* HowToView.swift in Sources */,
 				7D85C8B42867DDFC00E625A4 /* ViewModel.swift in Sources */,
+				7D744F3A28A1D178008FCDEA /* IntDoubleBinding.swift in Sources */,
+				7D744F3828A1CEFD008FCDEA /* BuilderView.swift in Sources */,
 				7D85C8BA28682DB100E625A4 /* StatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
