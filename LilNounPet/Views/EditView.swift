@@ -51,6 +51,9 @@ struct EditView: View {
                     .pickerStyle(.automatic)
                 }
                 
+                Section {
+                    NavigationLink("Edit Traits", destination: BuilderView())
+                }
                 
                 Section {
                     NavigationLink("How to Play", destination: HowToView())
