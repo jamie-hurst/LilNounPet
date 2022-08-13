@@ -15,10 +15,9 @@ struct BuilderView: View {
     @State private var selectedHead = 0
     @State private var selectedGlasses = 0
     
-
+    
     var ImageBuilder: some View {
         ZStack {
-            
             Group {
                 Image(vm.backgroundsArray[vm.chosenBackground])
                     .interpolation(.none)
@@ -46,9 +45,39 @@ struct BuilderView: View {
                     .scaledToFit()
                 
             }
+        }
+        
+    }
+    
+    
+    var body: some View {
+        //        VStack {
+        //            ImageBuilder
+        
+        Form {
+            ImageBuilder
+                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             
             
+            Section {
+                Stepper((bodiesArray[selectedBody]), value: $selectedBody, in: 0...(bodiesArray.count - 1))
+                Slider(value: IntDoubleBinding($selectedBody).doubleValue, in: 0...Double(bodiesArray.count - 1), step: 1.0)
+            }
             
+            Section {
+                Stepper((accessoriesArray[selectedAccessory]), value: $selectedAccessory, in: 0...(accessoriesArray.count - 1))
+                Slider(value: IntDoubleBinding($selectedAccessory).doubleValue, in: 0...Double(accessoriesArray.count - 1), step: 1.0)
+            }
+            
+            //                Section("Head") {
+            //                    Stepper((headsArray[selectedHead]), value: $selectedHead, in: 0...(headsArray.count - 1))
+            //                    Slider(value: IntDoubleBinding($selectedHead).doubleValue, in: 0...Double(headsArray.count - 1), step: 1.0)
+            //                }
+            
+            Section {
+                Stepper((glassesArray[selectedGlasses]), value: $selectedGlasses, in: 0...(glassesArray.count - 1))
+                Slider(value: IntDoubleBinding($selectedGlasses).doubleValue, in: 0...Double(glassesArray.count - 1), step: 1.0)
+            }
         }
         .onAppear {
             let bodyIndex = bodiesArray.firstIndex(of: vm.pet.body)!
@@ -69,40 +98,8 @@ struct BuilderView: View {
             
             vm.saveData()
         }
-    }
-    
-    
-    var body: some View {
-//        VStack {
-//            ImageBuilder
-            
-            Form {
-                ImageBuilder
-                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    
-                
-                Section {
-                    Stepper((bodiesArray[selectedBody]), value: $selectedBody, in: 0...(bodiesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedBody).doubleValue, in: 0...Double(bodiesArray.count - 1), step: 1.0)
-                }
-                
-                Section {
-                    Stepper((accessoriesArray[selectedAccessory]), value: $selectedAccessory, in: 0...(accessoriesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedAccessory).doubleValue, in: 0...Double(accessoriesArray.count - 1), step: 1.0)
-                }
-                
-//                Section("Head") {
-//                    Stepper((headsArray[selectedHead]), value: $selectedHead, in: 0...(headsArray.count - 1))
-//                    Slider(value: IntDoubleBinding($selectedHead).doubleValue, in: 0...Double(headsArray.count - 1), step: 1.0)
-//                }
-                
-                Section {
-                    Stepper((glassesArray[selectedGlasses]), value: $selectedGlasses, in: 0...(glassesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedGlasses).doubleValue, in: 0...Double(glassesArray.count - 1), step: 1.0)
-                }
-                
-            }
-//        }
+        
+        //        }
         
         
     }
