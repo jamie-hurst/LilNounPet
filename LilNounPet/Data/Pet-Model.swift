@@ -58,6 +58,14 @@ struct Pet: Codable {
         }
     }
     
+    var isOneDayOrOlder: Bool {
+        if age >= 1.0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var isPetEmpty: Bool {
         if body.isEmpty || accessory.isEmpty || head.isEmpty || glasses.isEmpty {
             return true
