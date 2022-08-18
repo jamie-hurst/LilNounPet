@@ -58,7 +58,7 @@ struct Pet: Codable {
         }
     }
     
-    var isOneDayOrOlder: Bool {
+    var isOneDayOldOrOlder: Bool {
         if age >= 1.0 {
             return true
         } else {
