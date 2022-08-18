@@ -52,7 +52,7 @@ struct BuilderView: View {
     
     var body: some View {
         
-        if vm.pet.isOneDayOrOlder {
+        if vm.pet.isOneDayOldOrOlder {
             
             Form {
                 ImageBuilder
