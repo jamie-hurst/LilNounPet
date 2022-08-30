@@ -261,6 +261,8 @@
 				7D944731287D2A400039015E /* PBXTargetDependency */,
 			);
 			name = LilNounPet;
+			packageProductDependencies = (
+			);
 			productName = LilNounPet;
 			productReference = 7D85C89A2867D53400E625A4 /* LilNounPet.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +311,8 @@
 				Base,
 			);
 			mainGroup = 7D85C8912867D53400E625A4;
+			packageReferences = (
+			);
 			productRefGroup = 7D85C89B2867D53400E625A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
