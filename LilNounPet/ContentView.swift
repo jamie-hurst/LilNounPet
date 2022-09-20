@@ -41,7 +41,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button { vm.isShowingEditView = true } label: {
                         Label("profile", systemImage: "face.smiling")
-                            .foregroundColor(colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme])
+                            .foregroundColor(.primary)
                             .font(.title2)
                     }
                 }
@@ -51,7 +51,7 @@ struct ContentView: View {
                         vm.hapticSuccess()
                     } label: {
                         Label("Feed", systemImage: "fork.knife.circle")
-                            .foregroundColor(vm.pet.isAlive ? (colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme]) : nil)
+                            .foregroundColor(vm.pet.isAlive ? .primary : nil)
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
@@ -62,7 +62,7 @@ struct ContentView: View {
                         vm.hapticSuccess()
                     } label: {
                         Label("Give water", systemImage: "drop")
-                            .foregroundColor(vm.pet.isAlive ? (colorScheme == .dark ? vm.darkThemes[vm.chosenTheme] : vm.lightThemes[vm.chosenTheme]) : nil)
+                            .foregroundColor(vm.pet.isAlive ? .primary : nil)
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
