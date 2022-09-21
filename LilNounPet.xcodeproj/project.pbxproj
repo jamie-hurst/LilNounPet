@@ -28,7 +28,7 @@
 		7D944729287D2A3F0039015E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D944728287D2A3F0039015E /* SwiftUI.framework */; };
 		7D94472C287D2A3F0039015E /* PetWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94472B287D2A3F0039015E /* PetWidget.swift */; };
 		7D94472E287D2A400039015E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D94472D287D2A400039015E /* Assets.xcassets */; };
-		7D944732287D2A400039015E /* PetWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D944724287D2A3F0039015E /* PetWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7D944732287D2A400039015E /* PetWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7D944724287D2A3F0039015E /* PetWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7D944738287D2A550039015E /* Pet-Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8AD2867DB3B00E625A4 /* Pet-Repository.swift */; };
 		7D944739287D2A580039015E /* Pet-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8AF2867DBA900E625A4 /* Pet-Model.swift */; };
 		7D94473A287D2A5B0039015E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8B12867DBDE00E625A4 /* Extensions.swift */; };
@@ -57,15 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7D944733287D2A400039015E /* Embed App Extensions */ = {
+		7D944733287D2A400039015E /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				7D944732287D2A400039015E /* PetWidgetExtension.appex in Embed App Extensions */,
+				7D944732287D2A400039015E /* PetWidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -253,7 +253,7 @@
 				7D85C8962867D53400E625A4 /* Sources */,
 				7D85C8972867D53400E625A4 /* Frameworks */,
 				7D85C8982867D53400E625A4 /* Resources */,
-				7D944733287D2A400039015E /* Embed App Extensions */,
+				7D944733287D2A400039015E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -292,7 +292,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					7D85C8992867D53400E625A4 = {
 						CreatedOnToolsVersion = 13.4;
