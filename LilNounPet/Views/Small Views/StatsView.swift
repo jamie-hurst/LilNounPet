@@ -34,7 +34,7 @@ struct StatsView: View {
                 Spacer()
                 
                 Text(healthLevels[vm.pet.thirst]!)
-                    .foregroundColor(colorScheme == .dark ? .dracPink : .red)
+                    .foregroundColor(colorScheme == .dark ? .pink : .red)
             }
             
             HStack {
@@ -42,7 +42,7 @@ struct StatsView: View {
                 Spacer()
                 
                 Text(healthLevels[vm.pet.hunger]!)
-                    .foregroundColor(colorScheme == .dark ? .dracPink : .red)
+                    .foregroundColor(colorScheme == .dark ? .pink : .red)
             }
         }
 
