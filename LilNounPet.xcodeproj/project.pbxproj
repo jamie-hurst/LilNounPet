@@ -24,6 +24,9 @@
 		7D85C8BC28682DEC00E625A4 /* DeathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8BB28682DEC00E625A4 /* DeathView.swift */; };
 		7D85C8BF28682E2600E625A4 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8BE28682E2600E625A4 /* EditView.swift */; };
 		7D85C8C128682E9500E625A4 /* HatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8C028682E9500E625A4 /* HatchView.swift */; };
+		7D91B20F28DBC07A0078C75B /* ZoraAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 7D91B20E28DBC07A0078C75B /* ZoraAPI */; };
+		7D91B21128DBC07A0078C75B /* ZoraUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7D91B21028DBC07A0078C75B /* ZoraUI */; };
+		7D91B21328DBC15C0078C75B /* ZoraAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 7D91B21228DBC15C0078C75B /* ZoraAPI */; };
 		7D944727287D2A3F0039015E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D944726287D2A3F0039015E /* WidgetKit.framework */; };
 		7D944729287D2A3F0039015E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D944728287D2A3F0039015E /* SwiftUI.framework */; };
 		7D94472C287D2A3F0039015E /* PetWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94472B287D2A3F0039015E /* PetWidget.swift */; };
@@ -110,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D91B21128DBC07A0078C75B /* ZoraUI in Frameworks */,
+				7D91B20F28DBC07A0078C75B /* ZoraAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D91B21328DBC15C0078C75B /* ZoraAPI in Frameworks */,
 				7D944729287D2A3F0039015E /* SwiftUI.framework in Frameworks */,
 				7D944727287D2A3F0039015E /* WidgetKit.framework in Frameworks */,
 			);
@@ -262,6 +268,8 @@
 			);
 			name = LilNounPet;
 			packageProductDependencies = (
+				7D91B20E28DBC07A0078C75B /* ZoraAPI */,
+				7D91B21028DBC07A0078C75B /* ZoraUI */,
 			);
 			productName = LilNounPet;
 			productReference = 7D85C89A2867D53400E625A4 /* LilNounPet.app */;
@@ -280,6 +288,9 @@
 			dependencies = (
 			);
 			name = PetWidgetExtension;
+			packageProductDependencies = (
+				7D91B21228DBC15C0078C75B /* ZoraAPI */,
+			);
 			productName = PetWidgetExtension;
 			productReference = 7D944724287D2A3F0039015E /* PetWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -312,6 +323,7 @@
 			);
 			mainGroup = 7D85C8912867D53400E625A4;
 			packageReferences = (
+				7D91B20D28DBC07A0078C75B /* XCRemoteSwiftPackageReference "swift-zorakit" */,
 			);
 			productRefGroup = 7D85C89B2867D53400E625A4 /* Products */;
 			projectDirPath = "";
@@ -677,6 +689,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D91B20D28DBC07A0078C75B /* XCRemoteSwiftPackageReference "swift-zorakit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mbla-xyz/swift-zorakit?ref=iosexample.com";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D91B20E28DBC07A0078C75B /* ZoraAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D91B20D28DBC07A0078C75B /* XCRemoteSwiftPackageReference "swift-zorakit" */;
+			productName = ZoraAPI;
+		};
+		7D91B21028DBC07A0078C75B /* ZoraUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D91B20D28DBC07A0078C75B /* XCRemoteSwiftPackageReference "swift-zorakit" */;
+			productName = ZoraUI;
+		};
+		7D91B21228DBC15C0078C75B /* ZoraAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D91B20D28DBC07A0078C75B /* XCRemoteSwiftPackageReference "swift-zorakit" */;
+			productName = ZoraAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D85C8922867D53400E625A4 /* Project object */;
 }

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import UserNotifications
+import ZoraAPI
 
 enum NeedType {
     case thirst, hunger
@@ -17,6 +18,8 @@ enum NeedType {
 class ViewModel: ObservableObject {
     @Published var pet: Pet
     @Published var isShowingEditView = false
+    
+    @AppStorage("tokenID") var tokenID = ""
     
     private var repository = PetRepository()
     private var imageSaver = ImageSaver()
@@ -55,6 +58,8 @@ class ViewModel: ObservableObject {
         pet.body = ""
         pet.accessory = ""
         pet.glasses = ""
+        
+        tokenID = ""
         
         cancelNotifications()
         saveData()
@@ -117,6 +122,24 @@ class ViewModel: ObservableObject {
         pet.lastDrink = Date()
         
         randomizeTraits()
+        // If the token ID field isn't empty, try to fetch the token
+//        if !tokenID.isReallyEmpty {
+//            do {
+//                try await assignTokenTraits()
+//
+//                // If the token can't be found, these fields will become empty and randomize traits method run
+//                if pet.body.isReallyEmpty || pet.accessory.isReallyEmpty || pet.head.isReallyEmpty || pet.glasses.isReallyEmpty {
+//                    randomizeTraits()
+//                }
+//
+//            } catch {
+//                print(error.localizedDescription)
+//            }
+//        } else {
+//            //user didn't attempt to enter a token ID
+//            randomizeTraits()
+//        }
+        
         addNotifications()
         toggleHatchView()
         
@@ -126,6 +149,43 @@ class ViewModel: ObservableObject {
     func toggleHatchView() {
         isShowingHatchView.toggle()
     }
+    
+    
+    //Zora API integration
+    
+//    func fetchToken() async throws -> [NFT.Attribute]? {
+//        let instance = ZoraAPI.shared
+//
+//        return try await instance.token(address: "0x4b10701Bfd7BFEdc47d50562b76b436fbB5BdB3B", id: tokenID)?.attributes
+//    }
+//
+//
+//    func assignTokenTraits() async throws {
+//        let tokenBody = try await fetchToken()?[1].value ?? ""
+//        let tokenAccessory = try await fetchToken()?[2].value ?? ""
+//        let tokenHead = try await fetchToken()?[3].value ?? ""
+//        let tokenGlasses = try await fetchToken()?[4].value ?? ""
+//
+//
+//        let bodyReplaced = tokenBody.replacingOccurrences(of: " ", with: "-")
+//        pet.body = "body-\(bodyReplaced)"
+//
+//        let accessoryReplaced = tokenAccessory.replacingOccurrences(of: " ", with: "-")
+//        pet.accessory = "accessory-\(accessoryReplaced)"
+//
+//        let headReplaced = tokenHead.replacingOccurrences(of: " ", with: "-")
+//        pet.head = "head-\(headReplaced)"
+//
+//        let glassesReplaced = tokenGlasses.replacingOccurrences(of: " ", with: "-")
+//        pet.glasses = "glasses-\(glassesReplaced)"
+//
+//        print(pet.body)
+//        print(pet.accessory)
+//        print(pet.head)
+//        print(pet.glasses)
+//    }
+    
+    
     
     //saves the image in standard 500x500 pixel sizing in PNG format
     func savePetImageToPhotoAlbum() {

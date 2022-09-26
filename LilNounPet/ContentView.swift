@@ -29,7 +29,7 @@ struct ContentView: View {
             .environmentObject(vm)
             .navigationTitle(vm.pet.name)
             .sheet(isPresented: $vm.isShowingHatchView) {
-                HatchView(isShowingHatchView: $vm.isShowingHatchView)
+                HatchView(isShowingHatchView: $vm.isShowingHatchView, tokenID: $vm.tokenID)
                     .environmentObject(vm)
                     .interactiveDismissDisabled(true)
             }

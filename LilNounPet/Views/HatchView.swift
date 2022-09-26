@@ -11,6 +11,7 @@ struct HatchView: View {
     @EnvironmentObject var vm : ViewModel
     
     @Binding var isShowingHatchView: Bool
+    @Binding var tokenID: String
     
     var body: some View {
         
@@ -34,7 +35,7 @@ struct HatchView: View {
                 
                 
                 Section {
-                    TextField("Name your Lil Noun", text:$vm.pet.name)
+                    TextField("Name your Lil Noun", text: $vm.pet.name)
                         .keyboardType(.alphabet)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
@@ -47,11 +48,22 @@ struct HatchView: View {
                         }
                 }
                 
+//                Section("Want to hatch an existing Lil Noun?") {
+//                    TextField("Enter your token ID", text: $tokenID)
+//                        .keyboardType(.numberPad)
+//                }
+                
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Hatch your pet") {
                         vm.hatchPet()
+            // implement token ID hatching
+//                        Task {
+//                            try await vm.hatchPet()
+////                            try await vm.assignTokenTraits()
+//                        }
+                        
                     }
                     .disabled(!vm.isHatchViewValid)
                 }
@@ -66,7 +78,9 @@ struct HatchView: View {
 
 struct HatchView_Previews: PreviewProvider {
     static var previews: some View {
-        HatchView(isShowingHatchView: ViewModel().$isShowingHatchView)
+        let vm = ViewModel()
+        
+        HatchView(isShowingHatchView: vm.$isShowingHatchView, tokenID: vm.$tokenID)
             .environmentObject(ViewModel())
     }
 }
