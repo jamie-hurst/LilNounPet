@@ -58,8 +58,25 @@ struct Pet: Codable {
         }
     }
     
+    //logic to determine if pet traits can be edited yet
     var isOneDayOldOrOlder: Bool {
         if age >= 1.0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    var isTwoDaysOldOrOlder: Bool {
+        if age >= 2.0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    var isThreeDaysOldOrOlder: Bool {
+        if age >= 3.0 {
             return true
         } else {
             return false

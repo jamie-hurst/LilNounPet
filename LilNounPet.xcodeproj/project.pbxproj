@@ -39,6 +39,7 @@
 		7D94473C287D2B1B0039015E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8B32867DDFC00E625A4 /* ViewModel.swift */; };
 		7D94473D287D2B590039015E /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DA53BF428724318005A821C /* LondrinaSolid-Regular.ttf */; };
 		7D94473E287D2B5D0039015E /* ArtAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D85C8AB2867D83C00E625A4 /* ArtAssets.swift */; };
+		7DA4012A28F383D1005884E6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7DA4012928F383D1005884E6 /* SDWebImageSwiftUI */; };
 		7DA53BF3287233AD005A821C /* HowToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA53BF2287233AD005A821C /* HowToView.swift */; };
 		7DA53BF528724318005A821C /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DA53BF428724318005A821C /* LondrinaSolid-Regular.ttf */; };
 		7DD766FC2893087A002708BE /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD766FB2893086A002708BE /* ImageSaver.swift */; };
@@ -113,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA4012A28F383D1005884E6 /* SDWebImageSwiftUI in Frameworks */,
 				7D91B21128DBC07A0078C75B /* ZoraUI in Frameworks */,
 				7D91B20F28DBC07A0078C75B /* ZoraAPI in Frameworks */,
 			);
@@ -270,6 +272,7 @@
 			packageProductDependencies = (
 				7D91B20E28DBC07A0078C75B /* ZoraAPI */,
 				7D91B21028DBC07A0078C75B /* ZoraUI */,
+				7DA4012928F383D1005884E6 /* SDWebImageSwiftUI */,
 			);
 			productName = LilNounPet;
 			productReference = 7D85C89A2867D53400E625A4 /* LilNounPet.app */;
@@ -324,6 +327,7 @@
 			mainGroup = 7D85C8912867D53400E625A4;
 			packageReferences = (
 				7D91B20D28DBC07A0078C75B /* XCRemoteSwiftPackageReference "swift-zorakit" */,
+				7DA4012828F383D1005884E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 7D85C89B2867D53400E625A4 /* Products */;
 			projectDirPath = "";
@@ -699,6 +703,14 @@
 				kind = branch;
 			};
 		};
+		7DA4012828F383D1005884E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -716,6 +728,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D91B20D28DBC07A0078C75B /* XCRemoteSwiftPackageReference "swift-zorakit" */;
 			productName = ZoraAPI;
+		};
+		7DA4012928F383D1005884E6 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DA4012828F383D1005884E6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
