@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @StateObject private var vm = ViewModel()
+    
+    @State private var thirstConfetti = 0
+    @State private var hungerConfetti = 0
+
     
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
@@ -49,23 +54,29 @@ struct ContentView: View {
                     Button {
                         vm.feed()
                         vm.hapticSuccess()
+                        hungerConfetti += 1
                     } label: {
                         Label("Feed", systemImage: "fork.knife.circle")
                             .foregroundColor(vm.pet.isAlive ? .primary : nil)
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
+                    .confettiCannon(counter: $hungerConfetti)
+
                 }
                 ToolbarItem(placement: .bottomBar) {
                     Button {
                         vm.giveWater()
                         vm.hapticSuccess()
+                        thirstConfetti += 1
                     } label: {
                         Label("Give water", systemImage: "drop")
                             .foregroundColor(vm.pet.isAlive ? .primary : nil)
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
+                    .confettiCannon(counter: $thirstConfetti)
+
                 }
             }
             .onReceive(timer) { _ in

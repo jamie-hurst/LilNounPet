@@ -191,10 +191,19 @@ struct BuilderView: View {
             }
             
         } else {
-            Text("Come back when your pet is a day old to customize your traits.")
-                .font(Font.custom("LondrinaSolid-Regular", size: 24, relativeTo: .title))
-                .padding()
             
+            VStack {
+                Image(systemName: "hourglass.circle")
+                    .font(.system(size: 60))
+                
+                Text("Come back when your pet is a day old to customize your traits.")
+                    .multilineTextAlignment(.center)
+                    .font(Font.custom("LondrinaSolid-Regular", size: 24, relativeTo: .title))
+                    .padding()
+                
+            }
+            .padding()
+
 //            AnimatedImage(url: URL(string: "https://user-images.githubusercontent.com/28959624/183983224-63e5b7c5-46aa-4e21-bf16-e4bd6dd43f08.png"))
 //                .resizable()
 //                .scaledToFit()
