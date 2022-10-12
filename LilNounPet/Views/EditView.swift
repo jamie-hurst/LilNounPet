@@ -28,7 +28,7 @@ struct EditView: View {
                 }
                 
                 Section("Bio") {
-                    TextEditor(text: $vm.pet.bio)
+                    TextField("", text: $vm.pet.bio, axis: .vertical)
                 }
                 
                 Section {
