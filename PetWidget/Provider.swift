@@ -55,7 +55,7 @@ struct Provider: TimelineProvider {
                 print("Error: Can't decode contents")
             }
         }
-        return defaultPet
+        return return Pet(name: "", bio: "", birthday: Date(), lastMeal: Date(), lastDrink: Date(), body: "", accessory: "", head: "", glasses: "")
     }
     
 }

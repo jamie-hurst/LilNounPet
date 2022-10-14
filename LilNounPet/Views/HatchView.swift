@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct HatchView: View {
     @EnvironmentObject var vm : ViewModel
     
     @Binding var isShowingHatchView: Bool
     @Binding var tokenID: String
+    @Binding var mainConfetti: Int
+ 
     
     var body: some View {
         
@@ -58,6 +61,7 @@ struct HatchView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Hatch your pet") {
                         vm.hatchPet()
+                        mainConfetti += 1
             // implement token ID hatching
 //                        Task {
 //                            try await vm.hatchPet()
@@ -80,7 +84,8 @@ struct HatchView_Previews: PreviewProvider {
     static var previews: some View {
         let vm = ViewModel()
         
-        HatchView(isShowingHatchView: vm.$isShowingHatchView, tokenID: vm.$tokenID)
+        
+        HatchView(isShowingHatchView: vm.$isShowingHatchView, tokenID: vm.$tokenID, mainConfetti: .constant(0))
             .environmentObject(ViewModel())
     }
 }

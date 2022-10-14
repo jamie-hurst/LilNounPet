@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @State private var thirstConfetti = 0
     @State private var hungerConfetti = 0
+    @State private var mainConfetti = 0
 
     
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
@@ -34,7 +35,7 @@ struct ContentView: View {
             .environmentObject(vm)
             .navigationTitle(vm.pet.name)
             .sheet(isPresented: $vm.isShowingHatchView) {
-                HatchView(isShowingHatchView: $vm.isShowingHatchView, tokenID: $vm.tokenID)
+                HatchView(isShowingHatchView: $vm.isShowingHatchView, tokenID: $vm.tokenID, mainConfetti: $mainConfetti)
                     .environmentObject(vm)
                     .interactiveDismissDisabled(true)
             }
@@ -61,7 +62,7 @@ struct ContentView: View {
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
-                    .confettiCannon(counter: $hungerConfetti)
+                    .confettiCannon(counter: $hungerConfetti, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")])
 
                 }
                 ToolbarItem(placement: .bottomBar) {
@@ -75,7 +76,7 @@ struct ContentView: View {
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
-                    .confettiCannon(counter: $thirstConfetti)
+                    .confettiCannon(counter: $thirstConfetti, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")])
 
                 }
             }
@@ -83,6 +84,8 @@ struct ContentView: View {
                 vm.saveData()
             }
         }
+        .confettiCannon(counter: $mainConfetti, num: 250, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")], rainHeight: 1200, radius: 800)
+
     }
     
     
