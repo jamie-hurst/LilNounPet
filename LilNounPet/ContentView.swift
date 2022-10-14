@@ -81,8 +81,9 @@ struct ContentView: View {
             .onReceive(timer) { _ in
                 vm.saveData()
             }
+            .confettiCannon(counter: $mainConfetti, num: 250, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")], rainHeight: 1200, radius: 800)
         }
-        .confettiCannon(counter: $mainConfetti, num: 250, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")], rainHeight: 1200, radius: 800)
+        
 
     }
     
