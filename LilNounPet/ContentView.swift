@@ -16,9 +16,7 @@ struct ContentView: View {
     @State private var hungerConfetti = 0
     @State private var mainConfetti = 0
 
-    
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
-    
     
     var body: some View {
         NavigationView {

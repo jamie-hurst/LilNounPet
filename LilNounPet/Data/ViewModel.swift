@@ -122,6 +122,7 @@ class ViewModel: ObservableObject {
         pet.lastDrink = Date()
         
         randomizeTraits()
+        
         // If the token ID field isn't empty, try to fetch the token
 //        if !tokenID.isReallyEmpty {
 //            do {

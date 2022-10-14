@@ -73,10 +73,3 @@ struct EditView: View {
         
     }
 }
-
-//struct EditView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditView(chosenBackground: $0, chosenTheme: .$chosenTheme)
-//            .environmentObject(ViewModel())
-//    }
-//}

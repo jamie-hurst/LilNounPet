@@ -13,8 +13,6 @@ struct ImageView: View {
     
     var body: some View {
         
-        
-        
         ZStack {
             Image(vm.backgroundsArray[vm.chosenBackground])
                 .resizable()

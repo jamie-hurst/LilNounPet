@@ -44,7 +44,6 @@ struct BuilderView: View {
                     .interpolation(.none)
                     .resizable()
                     .scaledToFit()
-                
             }
         }
         
@@ -56,7 +55,6 @@ struct BuilderView: View {
         if vm.pet.isThreeDaysOldOrOlder {
             
             Form {
-                
                 ImageBuilder
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
@@ -70,7 +68,7 @@ struct BuilderView: View {
                     Stepper((accessoriesArray[selectedAccessory]), value: $selectedAccessory, in: 0...(accessoriesArray.count - 1))
                     Slider(value: IntDoubleBinding($selectedAccessory).doubleValue, in: 0...Double(accessoriesArray.count - 1), step: 1.0)
                 }
-        
+                
                 Section {
                     Stepper((glassesArray[selectedGlasses]), value: $selectedGlasses, in: 0...(glassesArray.count - 1))
                     Slider(value: IntDoubleBinding($selectedGlasses).doubleValue, in: 0...Double(glassesArray.count - 1), step: 1.0)
@@ -81,7 +79,6 @@ struct BuilderView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding(.vertical, 8)
                 }
-                
             }
             .onAppear {
                 let bodyIndex = bodiesArray.firstIndex(of: vm.pet.body)!
@@ -107,7 +104,6 @@ struct BuilderView: View {
         } else if vm.pet.isTwoDaysOldOrOlder {
             
             Form {
-                
                 ImageBuilder
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
@@ -126,9 +122,8 @@ struct BuilderView: View {
                     Text("🎉 Editing unlocked for 2 of 3 traits")
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding(.vertical, 8)
-
+                    
                 }
-        
             }
             .onAppear {
                 let bodyIndex = bodiesArray.firstIndex(of: vm.pet.body)!
@@ -153,7 +148,6 @@ struct BuilderView: View {
         } else if vm.pet.isOneDayOldOrOlder {
             
             Form {
-                
                 ImageBuilder
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
@@ -168,7 +162,6 @@ struct BuilderView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding(.vertical, 8)
                 }
-        
             }
             .onAppear {
                 let bodyIndex = bodiesArray.firstIndex(of: vm.pet.body)!
@@ -203,12 +196,7 @@ struct BuilderView: View {
                 
             }
             .padding()
-
-//            AnimatedImage(url: URL(string: "https://user-images.githubusercontent.com/28959624/183983224-63e5b7c5-46aa-4e21-bf16-e4bd6dd43f08.png"))
-//                .resizable()
-//                .scaledToFit()
             
-        
         }
         
         

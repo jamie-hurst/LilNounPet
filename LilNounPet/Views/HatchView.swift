@@ -20,7 +20,6 @@ struct HatchView: View {
         
         NavigationView {
             Form {
-                
                 VStack {
                     HStack {
                         Spacer()
@@ -65,7 +64,7 @@ struct HatchView: View {
             // implement token ID hatching
 //                        Task {
 //                            try await vm.hatchPet()
-////                            try await vm.assignTokenTraits()
+//                            try await vm.assignTokenTraits()
 //                        }
                         
                     }

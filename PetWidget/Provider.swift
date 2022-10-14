@@ -29,9 +29,6 @@ struct Provider: TimelineProvider {
             pet: readContents()
         )
         
-        // Create a date that's 1 hour in the future.
-//        let nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: date)!
-        
         // Create the timeline with the entry and a reload policy with the date
         // for the next update.
         let timeline = Timeline(
