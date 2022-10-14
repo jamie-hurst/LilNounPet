@@ -20,7 +20,8 @@ Prevent your Lil Noun’s slow march toward doom by providing it with food and w
 
 The HomeScreen Widget is under development. The widget content will currently only refresh when the main app is opened.
 
-
+<br>
+<br>
 
 Privacy policy for the App Store: This app does not collect user data.
 
