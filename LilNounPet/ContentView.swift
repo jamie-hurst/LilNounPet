@@ -62,7 +62,7 @@ struct ContentView: View {
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
-                    .confettiCannon(counter: $hungerConfetti, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")])
+                    .confettiCannon(counter: $hungerConfetti)
 
                 }
                 ToolbarItem(placement: .bottomBar) {
@@ -76,7 +76,7 @@ struct ContentView: View {
                             .font(.title2)
                     }
                     .disabled(!vm.pet.isAlive)
-                    .confettiCannon(counter: $thirstConfetti, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")])
+                    .confettiCannon(counter: $thirstConfetti)
 
                 }
             }
