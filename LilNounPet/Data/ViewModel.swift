@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import UserNotifications
-import ZoraAPI
+//import ZoraAPI
 
 enum NeedType {
     case thirst, hunger

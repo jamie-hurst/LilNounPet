@@ -61,6 +61,7 @@ struct HatchView: View {
                     Button("Hatch your pet") {
                         vm.hatchPet()
                         mainConfetti += 1
+                        vm.hapticSuccess()
             // implement token ID hatching
 //                        Task {
 //                            try await vm.hatchPet()
