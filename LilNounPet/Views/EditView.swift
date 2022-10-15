@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import CoreHaptics
 
 struct EditView: View {
     @EnvironmentObject var vm : ViewModel
@@ -15,6 +16,8 @@ struct EditView: View {
     
     @Binding var chosenBackground: Int
     @Binding var chosenTheme: Int
+    
+    @State private var engine: CHHapticEngine?
     
     var body: some View {
         
@@ -67,9 +70,19 @@ struct EditView: View {
                     dismiss()
                 }
             }
+            .onAppear(perform: prepareHaptics)
         }
-        
-        
-        
     }
+    
+    func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
+        }
+    }
+    
 }

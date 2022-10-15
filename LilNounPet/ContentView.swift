@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ConfettiSwiftUI
+import CoreHaptics
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -15,6 +16,8 @@ struct ContentView: View {
     @State private var thirstConfetti = 0
     @State private var hungerConfetti = 0
     @State private var mainConfetti = 0
+    
+    @State private var engine: CHHapticEngine?
 
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
@@ -81,6 +84,7 @@ struct ContentView: View {
             .onReceive(timer) { _ in
                 vm.saveData()
             }
+            .onAppear(perform: prepareHaptics)
             .confettiCannon(counter: $mainConfetti, num: 250, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")], rainHeight: 1200, radius: 800)
         }
         
@@ -91,6 +95,17 @@ struct ContentView: View {
     //Custom font for NavigationTitle
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "LondrinaSolid-Regular", size: 40)!]
+    }
+    
+    func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
+        }
     }
     
 }
