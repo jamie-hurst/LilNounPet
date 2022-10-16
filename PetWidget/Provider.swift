@@ -29,11 +29,15 @@ struct Provider: TimelineProvider {
             pet: readContents()
         )
         
+        // Create a date that's 6 hours in the future.
+        let nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 6, to: date)!
+        
+        
         // Create the timeline with the entry and a reload policy with the date
         // for the next update.
         let timeline = Timeline(
             entries:[entry],
-            policy: .never
+            policy: .after(nextUpdateDate)
         )
         
         // Call the completion to pass the timeline to WidgetKit.
