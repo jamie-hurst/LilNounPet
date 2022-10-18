@@ -9,11 +9,9 @@ import WidgetKit
 
 struct Provider: TimelineProvider {
     
-    let defaultPet = Pet(name: "", bio: "", birthday: Date(), lastMeal: Date(), lastDrink: Date(), body: "body-cold", accessory: "accessory-1n", head: "head-aardvark", glasses: "glasses-hip-rose")
-    
 
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), pet: defaultPet)
+        SimpleEntry(date: Date(), pet: readContents())
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -29,15 +27,11 @@ struct Provider: TimelineProvider {
             pet: readContents()
         )
         
-        // Create a date that's 6 hours in the future.
-        let nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 5, to: date)!
-        
-        
         // Create the timeline with the entry and a reload policy with the date
         // for the next update.
         let timeline = Timeline(
             entries:[entry],
-            policy: .after(nextUpdateDate)
+            policy: .never
         )
         
         // Call the completion to pass the timeline to WidgetKit.

@@ -58,7 +58,7 @@ struct EditView: View {
                     vm.resetData()
                     dismiss()
                 } label: {
-                    Text("Erase all data")
+                    Text("Erase All Data")
                 }
             }
             .navigationTitle(vm.pet.name)

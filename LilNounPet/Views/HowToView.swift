@@ -35,7 +35,7 @@ struct HowToView: View {
                     .padding(.bottom)
                 
                 Text("""
-                    The HomeScreen Widget is under development. The widget content will currently only refresh when the main app is opened.
+                    The HomeScreen Widget is currently in beta. The widget content will currently only refresh when the main app is opened.
                     """)
             }
             .padding(.horizontal)
