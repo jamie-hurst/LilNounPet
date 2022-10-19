@@ -11,7 +11,7 @@ Prevent your Lil Noun’s slow march toward doom by providing it with food and w
 
 #### Current features ⌐◨-◨
 
-* All traits from the Lil Nouns cc0 project included
+* All traits from the Lil Nouns CC0 project included
 * Customize your background color
 * Dark mode support
 * Save your pet to the camera roll
