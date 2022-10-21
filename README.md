@@ -2,7 +2,7 @@
 
 ### tl;dr: A virtual pet to take care of and enjoy on your iPhone. 
 
-[Download the TestFlight Beta](https://testflight.apple.com/join/xbAAiLmE)
+[Available now on the App Store!](https://apps.apple.com/app/lil-noun-pet/id1636217871)
 
 ![expressions](https://user-images.githubusercontent.com/28959624/177456960-75afeba2-b428-4299-ae1d-979b62e8e950.png)
 
