@@ -1,6 +1,5 @@
 # LilNounPet
 
-### tl;dr: A virtual pet to take care of and enjoy on your iPhone. 
 
 [Available now on the App Store!](https://apps.apple.com/app/lil-noun-pet/id1636217871)
 
