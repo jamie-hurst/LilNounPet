@@ -17,6 +17,37 @@ struct BuilderView: View {
     @State private var selectedGlasses = 0
     
     
+    var AccessoryEditor: some View {
+        Section("Accessory") {
+            //Drops the word "accessory-" from the filename unless the "body-" naming convention is used (only 4 use body in the name)
+            let displayedAccessory = accessoriesArray[selectedAccessory].contains("accessory") ? String(accessoriesArray[selectedAccessory].dropFirst(10)) : String(accessoriesArray[selectedAccessory].dropFirst(5))
+            
+            Stepper(displayedAccessory, value: $selectedAccessory, in: 0...(accessoriesArray.count - 1))
+            Slider(value: IntDoubleBinding($selectedAccessory).doubleValue, in: 0...Double(accessoriesArray.count - 1), step: 1.0)
+        }
+    }
+    
+    var BodyEditor: some View {
+        Section("body") {
+            //Drops the first 5 characters from the filename to remove "body-"
+            let displayedBody = String(bodiesArray[selectedBody].dropFirst(5))
+            
+            Stepper(displayedBody, value: $selectedBody, in: 0...(bodiesArray.count - 1))
+            Slider(value: IntDoubleBinding($selectedBody).doubleValue, in: 0...Double(bodiesArray.count - 1), step: 1.0)
+        }
+    }
+    
+    var GlassesEditor: some View {
+        Section("noggles") {
+            //Drops the first 8 characters from the filename to remove "glasses-"
+            let displayedGlasses = String(glassesArray[selectedGlasses].dropFirst(8))
+            
+            Stepper(displayedGlasses, value: $selectedGlasses, in: 0...(glassesArray.count - 1))
+            Slider(value: IntDoubleBinding($selectedGlasses).doubleValue, in: 0...Double(glassesArray.count - 1), step: 1.0)
+        }
+    }
+    
+    
     var ImageBuilder: some View {
         ZStack {
             Group {
@@ -58,21 +89,9 @@ struct BuilderView: View {
                 ImageBuilder
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
-                
-                Section {
-                    Stepper((bodiesArray[selectedBody]), value: $selectedBody, in: 0...(bodiesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedBody).doubleValue, in: 0...Double(bodiesArray.count - 1), step: 1.0)
-                }
-                
-                Section {
-                    Stepper((accessoriesArray[selectedAccessory]), value: $selectedAccessory, in: 0...(accessoriesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedAccessory).doubleValue, in: 0...Double(accessoriesArray.count - 1), step: 1.0)
-                }
-                
-                Section {
-                    Stepper((glassesArray[selectedGlasses]), value: $selectedGlasses, in: 0...(glassesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedGlasses).doubleValue, in: 0...Double(glassesArray.count - 1), step: 1.0)
-                }
+                BodyEditor
+                AccessoryEditor
+                GlassesEditor
                 
                 Section {
                     Text("🎉 You've unlocked editing for all traits!")
@@ -107,16 +126,8 @@ struct BuilderView: View {
                 ImageBuilder
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
-                
-                Section {
-                    Stepper((bodiesArray[selectedBody]), value: $selectedBody, in: 0...(bodiesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedBody).doubleValue, in: 0...Double(bodiesArray.count - 1), step: 1.0)
-                }
-                
-                Section {
-                    Stepper((accessoriesArray[selectedAccessory]), value: $selectedAccessory, in: 0...(accessoriesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedAccessory).doubleValue, in: 0...Double(accessoriesArray.count - 1), step: 1.0)
-                }
+                BodyEditor
+                AccessoryEditor
                 
                 Section {
                     Text("🎉 Editing unlocked for 2 of 3 traits")
@@ -151,11 +162,7 @@ struct BuilderView: View {
                 ImageBuilder
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
-                
-                Section {
-                    Stepper((bodiesArray[selectedBody]), value: $selectedBody, in: 0...(bodiesArray.count - 1))
-                    Slider(value: IntDoubleBinding($selectedBody).doubleValue, in: 0...Double(bodiesArray.count - 1), step: 1.0)
-                }
+                AccessoryEditor
                 
                 Section {
                     Text("🎉 Editing unlocked for 1 of 3 traits")
