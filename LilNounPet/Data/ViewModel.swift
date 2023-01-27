@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import UserNotifications
-//import ZoraAPI
+import ZoraAPI
 
 enum NeedType {
     case thirst, hunger
@@ -18,6 +18,8 @@ enum NeedType {
 class ViewModel: ObservableObject {
     @Published var pet: Pet
     @Published var isShowingEditView = false
+    @Published var isShowingAlert = false
+    @Published var mainConfetti = 0
     
     @AppStorage("tokenID") var tokenID = ""
     
@@ -107,86 +109,106 @@ class ViewModel: ObservableObject {
     }
     
     
-    //hatching
-    var isHatchViewValid: Bool {
+    // hatching validation
+    var isPetNameValid: Bool {
         if pet.name.isReallyEmpty {
             return false
         }
         return true
     }
     
-    func hatchPet() {
+    var isTokenEntryValid: Bool {
+        if tokenID.isReallyEmpty {
+            return true
+        }
+        
+        if Int(tokenID) == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func hatchPet() async {
+        // If the token ID field isn't empty, try to fetch the token
+        if !tokenID.isReallyEmpty {
+            do {
+                try await assignTokenTraits()
+                
+                // If the token can't be found, show the alert and bail
+                if pet.isPetEmpty {
+                    print("token ID entered can't be found")
+                    
+                    // Show the error message
+                    isShowingAlert = true
+                    // Bail from function
+                    return
+                } else {
+                    print("your lil nouns has been summoned! Token found!")
+                }
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        } else {
+            //user didn't attempt to enter a token ID
+            randomizeTraits()
+            print("no token ID entered")
+        }
+        
         pet.birthday = Date()
         pet.bio = ""
         pet.lastMeal = Date()
         pet.lastDrink = Date()
         
-        randomizeTraits()
-        
-        // If the token ID field isn't empty, try to fetch the token
-//        if !tokenID.isReallyEmpty {
-//            do {
-//                try await assignTokenTraits()
-//
-//                // If the token can't be found, these fields will become empty and randomize traits method run
-//                if pet.body.isReallyEmpty || pet.accessory.isReallyEmpty || pet.head.isReallyEmpty || pet.glasses.isReallyEmpty {
-//                    randomizeTraits()
-//                }
-//
-//            } catch {
-//                print(error.localizedDescription)
-//            }
-//        } else {
-//            //user didn't attempt to enter a token ID
-//            randomizeTraits()
-//        }
-        
         addNotifications()
         toggleHatchView()
+        mainConfetti += 1
         
         saveData()
     }
-    
+  
     func toggleHatchView() {
         isShowingHatchView.toggle()
     }
     
     
-    //Zora API integration
+    // Zora API integration
+    func fetchToken() async throws -> [NFT.Attribute]? {
+        let instance = ZoraAPI.shared
+        let lilNounsContractAddress = "0x4b10701Bfd7BFEdc47d50562b76b436fbB5BdB3B"
+        
+        return try await instance.token(address: lilNounsContractAddress, id: tokenID)?.attributes
+    }
     
-//    func fetchToken() async throws -> [NFT.Attribute]? {
-//        let instance = ZoraAPI.shared
-//
-//        return try await instance.token(address: "0x4b10701Bfd7BFEdc47d50562b76b436fbB5BdB3B", id: tokenID)?.attributes
-//    }
-//
-//
-//    func assignTokenTraits() async throws {
-//        let tokenBody = try await fetchToken()?[1].value ?? ""
-//        let tokenAccessory = try await fetchToken()?[2].value ?? ""
-//        let tokenHead = try await fetchToken()?[3].value ?? ""
-//        let tokenGlasses = try await fetchToken()?[4].value ?? ""
-//
-//
-//        let bodyReplaced = tokenBody.replacingOccurrences(of: " ", with: "-")
-//        pet.body = "body-\(bodyReplaced)"
-//
-//        let accessoryReplaced = tokenAccessory.replacingOccurrences(of: " ", with: "-")
-//        pet.accessory = "accessory-\(accessoryReplaced)"
-//
-//        let headReplaced = tokenHead.replacingOccurrences(of: " ", with: "-")
-//        pet.head = "head-\(headReplaced)"
-//
-//        let glassesReplaced = tokenGlasses.replacingOccurrences(of: " ", with: "-")
-//        pet.glasses = "glasses-\(glassesReplaced)"
-//
-//        print(pet.body)
-//        print(pet.accessory)
-//        print(pet.head)
-//        print(pet.glasses)
-//    }
-    
-    
+    // Assigns the fetched data to the current pet or returns empty strings if nothing is found
+    func assignTokenTraits() async throws {
+        let tokenBody = try await fetchToken()?[safe: 1]?.value ?? ""
+        let tokenAccessory = try await fetchToken()?[safe: 2]?.value ?? ""
+        let tokenHead = try await fetchToken()?[safe: 3]?.value ?? ""
+        let tokenGlasses = try await fetchToken()?[safe: 4]?.value ?? ""
+        
+        if !tokenBody.isReallyEmpty || !tokenAccessory.isReallyEmpty || !tokenHead.isReallyEmpty || !tokenGlasses.isReallyEmpty {
+            
+            let bodyReplaced = tokenBody.replacingOccurrences(of: " ", with: "-")
+            pet.body = "body-\(bodyReplaced)"
+            
+            let accessoryReplaced = tokenAccessory.replacingOccurrences(of: " ", with: "-")
+            pet.accessory = "accessory-\(accessoryReplaced)"
+            
+            let headReplaced = tokenHead.replacingOccurrences(of: " ", with: "-")
+            pet.head = "head-\(headReplaced)"
+            
+            let glassesReplaced = tokenGlasses.replacingOccurrences(of: " ", with: "-")
+            pet.glasses = "glasses-\(glassesReplaced)"
+        }
+        
+        print(pet.body)
+        print(pet.accessory)
+        print(pet.head)
+        print(pet.glasses)
+    }
     
     //saves the image in standard 500x500 pixel sizing in PNG format
     func savePetImageToPhotoAlbum() {

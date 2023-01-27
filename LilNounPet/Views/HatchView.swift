@@ -13,8 +13,10 @@ struct HatchView: View {
     
     @Binding var isShowingHatchView: Bool
     @Binding var tokenID: String
-    @Binding var mainConfetti: Int
- 
+    
+    @State private var hatchButtonText = "Hatch Your Pet"
+    
+    let alertText = AlertText()
     
     var body: some View {
         
@@ -50,42 +52,63 @@ struct HatchView: View {
                         }
                 }
                 
-//                Section("Want to hatch an existing Lil Noun?") {
-//                    TextField("Enter your token ID", text: $tokenID)
-//                        .keyboardType(.numberPad)
-//                }
+                Section("Want to hatch an existing Lil Noun?") {
+                    TextField("Enter your token ID", text: $tokenID)
+                        .keyboardType(.numberPad)
+                }
                 
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Hatch your pet") {
-                        vm.hatchPet()
-                        mainConfetti += 1
-                        vm.hapticSuccess()
-            // implement token ID hatching
-//                        Task {
-//                            try await vm.hatchPet()
-//                            try await vm.assignTokenTraits()
-//                        }
+                    Button(hatchButtonText) {
+                        // Changes the text of the hatch button to say "Loading"
+                        hatchButtonLoading()
                         
+                        Task {
+                            await vm.hatchPet()
+                        }
                     }
-                    .disabled(!vm.isHatchViewValid)
+                    .disabled(!vm.isPetNameValid || !vm.isTokenEntryValid || hatchButtonText == "Loading")
+                    // Fire an alert if there's an error fetching the data
+                    .alert(alertText.title, isPresented: $vm.isShowingAlert) {
+                        Button("Dismiss", role: .cancel) {
+                            withAnimation {
+                                // Toggles the button text back to default text
+                                hatchButtonDefault()
+                            }
+                        }
+                    } message: {
+                        Text(alertText.message)
+                    }
                 }
             }
-            
             
         }
         
         
     }
+    
+    func hatchButtonLoading() {
+        hatchButtonText = "Loading"
+    }
+    
+    func hatchButtonDefault() {
+        hatchButtonText = "Hatch Your Pet"
+    }
+    
+}
+
+
+struct AlertText {
+    let title = "Error Fetching token"
+    let message = "There was an error fetching the data for this token ID. Please try again or enter another token ID number."
 }
 
 struct HatchView_Previews: PreviewProvider {
     static var previews: some View {
         let vm = ViewModel()
         
-        
-        HatchView(isShowingHatchView: vm.$isShowingHatchView, tokenID: vm.$tokenID, mainConfetti: .constant(0))
+        HatchView(isShowingHatchView: vm.$isShowingHatchView, tokenID: vm.$tokenID)
             .environmentObject(ViewModel())
     }
 }

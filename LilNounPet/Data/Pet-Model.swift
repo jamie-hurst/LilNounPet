@@ -84,7 +84,7 @@ struct Pet: Codable {
     }
     
     var isPetEmpty: Bool {
-        if body.isEmpty || accessory.isEmpty || head.isEmpty || glasses.isEmpty {
+        if body.isReallyEmpty || accessory.isReallyEmpty || head.isReallyEmpty || glasses.isReallyEmpty {
             return true
         } else { return false }
     }

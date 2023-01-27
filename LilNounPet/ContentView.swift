@@ -15,7 +15,6 @@ struct ContentView: View {
     
     @State private var thirstConfetti = 0
     @State private var hungerConfetti = 0
-    @State private var mainConfetti = 0
     
     @State private var engine: CHHapticEngine?
 
@@ -36,7 +35,7 @@ struct ContentView: View {
             .environmentObject(vm)
             .navigationTitle(vm.pet.name)
             .sheet(isPresented: $vm.isShowingHatchView) {
-                HatchView(isShowingHatchView: $vm.isShowingHatchView, tokenID: $vm.tokenID, mainConfetti: $mainConfetti)
+                HatchView(isShowingHatchView: $vm.isShowingHatchView, tokenID: $vm.tokenID)
                     .environmentObject(vm)
                     .interactiveDismissDisabled(true)
             }
@@ -85,7 +84,7 @@ struct ContentView: View {
                 vm.saveData()
             }
             .onAppear(perform: prepareHaptics)
-            .confettiCannon(counter: $mainConfetti, num: 250, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")], rainHeight: 1200, radius: 800)
+            .confettiCannon(counter: $vm.mainConfetti, num: 250, confettis: [.shape(.circle), .shape(.triangle), .shape(.square), .shape(.slimRectangle), .text("⌐◨-◨")], rainHeight: 1200, radius: 800)
         }
         
 
