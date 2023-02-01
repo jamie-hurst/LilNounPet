@@ -144,7 +144,7 @@ class ViewModel: ObservableObject {
                     // Bail from function
                     return
                 } else {
-                    print("your lil nouns has been summoned! Token found!")
+                    print("your lil noun has been summoned! Token found!")
                 }
                 
             } catch {
